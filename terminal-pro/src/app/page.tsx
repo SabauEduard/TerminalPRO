@@ -1,5 +1,8 @@
-import LoginPage from "./components/LoginPage";
+'use client';
+
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return <LoginPage />;
+  // Later you can add authentication check here
+  redirect('/login');
 }

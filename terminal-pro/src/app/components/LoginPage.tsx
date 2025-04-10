@@ -2,15 +2,20 @@
 
 import { useState, FormEvent, ChangeEvent } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import '../styles/login.css';
 
 export default function LoginPage() {
   const [employeeCode, setEmployeeCode] = useState<string>('');
+  const router = useRouter();
   
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Authentication logic here
     console.log('Employee code submitted:', employeeCode);
+    
+    // For now, just navigate to dashboard
+    router.push('/dashboard');
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {

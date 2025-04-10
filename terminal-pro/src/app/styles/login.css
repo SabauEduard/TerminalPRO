@@ -42,18 +42,18 @@
   margin-left: 0.5rem;
   font-size: 1.5rem;
   font-weight: 400;
-  color: #1f2937;
+  color: #1E1E1E;
   font-family: var(--font-outfit);
 }
 
 .terminal-title-highlight {
-  color: #6860b8;
+  color: #54479B;
 }
 
 .terminal-heading {
   font-size: 1.5rem;
   font-weight: 300;
-  color: #1f2937;
+  color: #000000;
   margin-bottom: 2rem;
   text-align: center;
   font-family: var(--font-outfit);
@@ -61,7 +61,7 @@
 
 .terminal-form-group {
   margin-bottom: 2rem;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 
 .terminal-label {
@@ -85,7 +85,7 @@
 }
 
 .terminal-button {
-  background: #37384a;
+  background: #373F51;
   color: white;
   padding: 0.875rem 2rem;
   border-radius: 1rem;

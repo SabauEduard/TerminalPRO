@@ -1,0 +1,172 @@
+.homepage-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.nav-sidebar {
+  width: 240px;
+  background: white;
+  padding: 1.5rem;
+  border-right: 1px solid #e2e8f0;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.nav-title {
+  font-family: var(--font-outfit);
+  font-size: 1.25rem;
+  color: #1e1e1e;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: #1E1E1E;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 1.25rem;
+}
+
+.nav-link.active {
+  background: #54479B;
+  color: white;
+}
+
+.nav-link:hover:not(.active) {
+  background: #f1f5f9;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #1E1E1E;
+}
+
+.profile-picture {
+  border-radius: 50%;
+}
+
+.flight-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-date {
+  color: #1E1E1E;
+  font-size: 0.875rem;
+}
+
+.stat-time {
+  color: #1E1E1E;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #54479B;
+}
+
+.stat-details {
+  margin: 0.5rem 0;
+  color: #64748b;
+}
+
+.stat-label {
+  color: #1E1E1E;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.stat-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.stat-date-time {
+  display: flex;
+  align-items: space-between;
+  gap: 0.5rem;
+}
+
+.map-container {
+  background: white;
+  border-radius: 0.5rem;
+  height: 400px;
+  margin-bottom: 2rem;
+}
+
+.grounded-planes {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  color: #1E1E1E;
+}
+
+.grounded-planes-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: var(--font-outfit);
+}
+
+.planes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.planes-table th,
+.planes-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.planes-table th {
+  color: #64748b;
+  font-weight: 500;
+  background: #f8fafc;
+}
