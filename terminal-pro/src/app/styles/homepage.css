@@ -101,7 +101,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 2rem;
-  border: 1px solid #e2e8f0;
 }
 
 .stat-card {
@@ -170,6 +169,7 @@
   height: 400px;
   margin-bottom: 2rem;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
 }
 
 .grounded-planes {
