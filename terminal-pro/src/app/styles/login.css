@@ -1,112 +1,104 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.terminal-container {
+  min-height: 100vh;
+  width: 100%;
+  background: #f0f6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
 
-@layer components {
-  .terminal-container {
-    min-height: 100vh;
-    width: 100%;
-    background: #f0f6ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 2rem;
-  }
+.terminal-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 72rem;
+  width: 100%;
+}
 
-  .terminal-flex-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 72rem;
-    width: 100%;
-  }
+.terminal-illustration {
+  display: none;
+  padding-right: 3rem;
+}
 
-  .terminal-illustration {
-    display: none;
-    padding-right: 3rem;
-  }
+.terminal-auth-box {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+  padding: 2rem;
+  max-width: 28rem;
+  width: 100%;
+  border: 1px solid #dee6f1;
+}
 
-  .terminal-auth-box {
-    background: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-    padding: 2rem;
-    max-width: 28rem;
-    width: 100%;
-    border: 1px solid #dee6f1;
-  }
+.terminal-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
 
-  .terminal-logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
+.terminal-title {
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1f2937;
+  font-family: var(--font-outfit);
+}
 
-  .terminal-title {
-    margin-left: 0.5rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #1f2937;
-    font-family: var(--font-outfit);
-  }
+.terminal-title-highlight {
+  color: #6860b8;
+}
 
-  .terminal-title-highlight {
-    color: #6860b8;
-  }
+.terminal-heading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: var(--font-outfit);
+}
 
-  .terminal-heading {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: #1f2937;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-family: var(--font-outfit);
-  }
+.terminal-form-group {
+  margin-bottom: 2rem;
+}
 
-  .terminal-form-group {
-    margin-bottom: 2rem;
-  }
+.terminal-label {
+  display: block;
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-outfit);
+  font-weight: 400;
+}
 
-  .terminal-label {
-    display: block;
-    font-size: 0.875rem;
-    color: #4b5563;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
-    font-weight: 400;
-  }
+.terminal-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background: #f3f4f6;
+  font-size: 1rem;
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+}
 
-  .terminal-input {
-    width: 100%;
-    padding: 0.875rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.375rem;
-    background: #f3f4f6;
-    font-size: 1rem;
-    font-family: var(--font-geist-mono), 'Roboto Mono', monospace;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-weight: 400;
-  }
+.terminal-button {
+  background: #37384a;
+  color: white;
+  padding: 0.875rem 2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  transition: background-color 0.2s;
+  font-family: var(--font-outfit);
+  font-weight: 400;
+}
 
-  .terminal-button {
-    background: #37384a;
-    color: white;
-    padding: 0.875rem 2rem;
-    border-radius: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    margin: 0 auto;
-    display: block;
-    transition: background-color 0.2s;
-    font-family: var(--font-outfit);
-    font-weight: 400;
-  }
-
-  .terminal-button:hover {
-    background: #292a3a;
-  }
+.terminal-button:hover {
+  background: #292a3a;
 }
 
 @media (min-width: 768px) {
