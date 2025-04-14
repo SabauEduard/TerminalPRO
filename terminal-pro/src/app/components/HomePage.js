@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import '../styles/homepage.css';
+import '../globals.css';
 
 export default function HomePage() {
   return (
@@ -54,7 +55,7 @@ export default function HomePage() {
               <Image src="/flights-icon.svg" alt="Flights" width={24} height={24} />
               <span>Flights</span>
             </a>
-            <a href="#" className="nav-link">
+            <a href="/passengers" className="nav-link">
               <Image src="/passengers-icon.svg" alt="Passengers" width={24} height={24} />
               <span>Passengers</span>
             </a>
@@ -121,11 +122,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-          <div className="map-container">
-            {/* Map will be implemented later */}
-          </div>
-
           <div className="grounded-planes">
             <h3 className="grounded-planes-title">Grounded planes</h3>
             <table className="planes-table">
@@ -138,13 +134,60 @@ export default function HomePage() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Wizz Air</td>
-                  <td>9H-WNJ</td>
-                  <td>Airbus A321-271NX</td>
-                  <td>W43238</td>
-                </tr>
-                {/* Add more rows as needed */}
+              <tr>
+                <td>Wizz Air</td>
+                <td>HA-LVE</td>
+                <td>Airbus A320-232</td>
+                <td>W62345</td>
+              </tr>
+              <tr>
+                <td>Ryanair</td>
+                <td>EI-DCL</td>
+                <td>Boeing 737-800</td>
+                <td>FR3421</td>
+              </tr>
+              <tr>
+                <td>Lufthansa</td>
+                <td>D-AISQ</td>
+                <td>Airbus A321-231</td>
+                <td>LH1022</td>
+              </tr>
+              <tr>
+                <td>Emirates</td>
+                <td>A6-EOZ</td>
+                <td>Airbus A380-861</td>
+                <td>EK29</td>
+              </tr>
+              <tr>
+                <td>Qatar Airways</td>
+                <td>A7-BCY</td>
+                <td>Boeing 787-8</td>
+                <td>QR140</td>
+              </tr>
+              <tr>
+                <td>British Airways</td>
+                <td>G-ZBKA</td>
+                <td>Boeing 787-9</td>
+                <td>BA113</td>
+              </tr>
+              <tr>
+                <td>KLM</td>
+                <td>PH-BVS</td>
+                <td>Boeing 777-300ER</td>
+                <td>KL601</td>
+              </tr>
+              <tr>
+                <td>Air France</td>
+                <td>F-GUGN</td>
+                <td>Airbus A318-111</td>
+                <td>AF1302</td>
+              </tr>
+              <tr>
+                <td>Turkish Airlines</td>
+                <td>TC-JNC</td>
+                <td>Airbus A330-300</td>
+                <td>TK1978</td>
+              </tr>
               </tbody>
             </table>
           </div>

@@ -1,0 +1,251 @@
+.h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.passengers-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 5rem;
+}
+
+.passengers-table th,
+.passengers-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.passengers-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* Top rounded corners */
+.passengers-table thead th:first-child {
+    border-top-left-radius: 1rem;
+}
+
+.passengers-table thead th:last-child {
+    border-top-right-radius: 1rem;
+}
+
+/* Bottom rounded corners - on tbody */
+.passengers-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 1rem;
+}
+
+.passengers-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 1rem;
+}
+
+.passengers-table thead {
+    letter-spacing: 0.1rem;
+    color: #5a5a5a;
+    font-weight: 500;
+    background: #DEDEDE;
+}
+
+.columns-button {
+    height: 3rem;
+    width: 10rem;
+    border-radius: 0.75rem;
+    background-color: #B6DEFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    width: 18rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background-color: #F4F4F5;
+    color: rgba(0, 0, 0, 0.38);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.sidepanel-bg {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.sidepanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50vw;
+    background-color: white;
+    padding: 3rem;
+}
+
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    gap: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 14px;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.pagination a.active {
+    background-color: #54479B;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.pagination a:first-child,
+.pagination a:last-child {
+    color: #777;
+    font-weight: bold;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.sidebar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.last-ticket-bg {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.last-ticket {
+    background-color: white;
+    width: 40%;
+    height: 100%;
+    border-radius: 0.75rem;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    /* overflow: hidden; */
+}
+
+.circle1,
+.circle2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.circle1 {
+    bottom: 125px;
+    left: -25px;
+    box-shadow: inset -4px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.circle2 {
+    bottom: 125px;
+    right: -25px;
+    box-shadow: inset 4px 0px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-info {
+    height: 275px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.cod-bare {
+    width: 100%;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    position: absolute;
+    width: calc(100% - 50px);
+    left: 25px;
+    bottom: 150px;
+    border: none;
+    border-top: 3px dashed black;
+}
+
+.ticket-info-top {
+    padding-left: 1.5rem;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket-info-dest {
+    display: flex;
+    padding-right: 1.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ticket-info-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.sidepanel-top {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
