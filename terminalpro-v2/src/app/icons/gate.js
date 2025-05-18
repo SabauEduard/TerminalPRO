@@ -1,9 +1,7 @@
-
-
-export default function GateIcon({ width = "1.5rem", height = "1.5rem" }) {
+export default function GateIcon({ width = "1.5rem", height = "1.5rem", color = "#54479B" }) {
     return (
         <svg
-            style={{ width: width, height: height }}
+            style={{ width: width, height: height, fill: color }}
             id="Layer_1"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"

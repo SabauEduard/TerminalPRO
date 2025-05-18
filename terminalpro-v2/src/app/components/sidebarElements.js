@@ -1,0 +1,36 @@
+'use client'
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import HomeIcon from '../icons/home';
+import AirplaneIcon from '../icons/airplane';
+import TicketIcon from '../icons/ticket';
+import PassengersIcon from '../icons/passengers';
+import CrewIcon from '../icons/crew';
+
+export default function SidebarElements() {
+    const pathname = usePathname();
+
+    const sidebarElements = [
+        { name: "Home", icon: <HomeIcon color="currentColor" />, href: "/" },
+        { name: "Airplanes", icon: <AirplaneIcon color="currentColor" />, href: "/airplanes" },
+        { name: "Flights", icon: <TicketIcon color="currentColor" />, href: "/flights" },
+        { name: "Passengers", icon: <PassengersIcon color="currentColor" />, href: "/passengers" },
+        { name: "Crew", icon: <CrewIcon color="currentColor" />, href: "/crew" },
+    ];
+
+    return (
+        <div className="flex flex-col mt-8 gap-2">
+            {sidebarElements.map((element, index) => (
+                <Link
+                    href={element.href}
+                    key={index}
+                    className={`${pathname === element.href ? 'bg-tp-purple text-white' : 'text-gray-700'} flex items-center gap-3 p-2 hover:bg-tp-purple/[0.75] hover:text-white rounded-md cursor-pointer`}
+                >
+                    {element.icon}
+                    <span>{element.name}</span>
+                </Link>
+            ))}
+        </div>
+    )
+}
