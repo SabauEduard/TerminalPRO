@@ -20,16 +20,18 @@ export default function SidebarElements() {
     ];
 
     return (
-        <div className="flex flex-col mt-8 gap-2">
+        <div className="flex flex-col mt-8 gap-1 items-center">
             {sidebarElements.map((element, index) => (
-                <Link
-                    href={element.href}
-                    key={index}
-                    className={`${pathname === element.href ? 'bg-tp-purple-medium text-white' : 'text-gray-700'} flex items-center gap-3 p-2 hover:bg-tp-purple-medium/[0.85] hover:text-white focus:bg-tp-purple-dark focus:text-white rounded-md cursor-pointer`}
-                >
-                    {element.icon}
-                    <span>{element.name}</span>
-                </Link>
+                <div key={index} className="w-full">
+                    <Link
+                        href={element.href}
+                        className={`${pathname === element.href ? 'bg-tp-purple-medium text-white' : 'text-gray-700'} flex w-full items-center gap-3 p-3 hover:bg-tp-purple-medium/[0.85] hover:text-white focus:bg-tp-purple-dark focus:text-white rounded-md cursor-pointer`}
+                    >
+                        {element.icon}
+                        <span>{element.name}</span>
+                    </Link>
+                    {index < sidebarElements.length - 1 && <div className="h-[1px] w-[60%] bg-tp-gray-light/[0.5]"></div>}
+                </div>
             ))}
         </div>
     )
