@@ -268,7 +268,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Total {grounded_airplanes.length} airplanes</span>
+                    <span className="text-default-400 text-small">Total {filteredItems.length} airplanes</span>
                     <label className="flex items-center text-default-400 text-small">
                         Rows per page:
                         <select
@@ -299,7 +299,7 @@ export default function Home() {
                     isCompact
                     showControls
                     showShadow
-                    color="primary"
+                    color="secondary"
                     page={page}
                     total={pages}
                     onChange={setPage}
