@@ -5,7 +5,11 @@ export default function PinIcon({ width = "1.5rem", height = "1.5rem", color = "
             xmlns="http://www.w3.org/2000/svg"
             id="Outline"
             viewBox="0 0 24 24"
+            role="img"
+            aria-label="Pin icon"
+            focusable="false"
         >
+            <title>Pin</title>
             <path
                 d="M12,6a4,4,0,1,0,4,4A4,4,0,0,0,12,6Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,12Z"
                 fill={color}

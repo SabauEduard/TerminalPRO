@@ -1,44 +1,83 @@
+import ArrivalIcon from "../icons/arrival";
+import DepartureIcon from "../icons/departure";
+import PassengersIcon from "../icons/passengers";
 import PinIcon from "../icons/pin";
 import Card from "./card";
 
 export default function TopPanels() {
     return (
-        <div className="flex flex-col gap-4 w-full px-6 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <div className="flex flex-col gap-4 w-full pb-3 bg-white">
             <div className="flex items-center space-x-4">
-                <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    <PinIcon className="inline-block mr-2" width="1.5rem" height="1.5rem" />
+                <h1 className="text-3xl text-gray-600 flex gap-2 items-baseline">
+                    <PinIcon width="3rem" height="3rem" />
                     OTOPENI (OTP)
                 </h1>
             </div>
-            <div className="flex items-center space-x-4">
-                <div className="bg-white dark:bg-tp-gray-dark rounded-lg shadow-md p-6">
-                    <h2 className="text-xl font-semibold text-tp-gray-dark dark:text-white mb-4">Card Title</h2>
-                    <p className="text-tp-gray-light dark:text-tp-gray-dark mb-4">
-                        This is a simple card component that can be used to display content.
-                    </p>
-                    <button className="bg-tp-blue text-white px-4 py-2 rounded hover:bg-tp-blue-dark transition-colors">
-                        Action Button
-                    </button>
+            <div className="flex items-center space-x-4 h-48">
+                <div className="w-full h-full rounded-lg p-6 flex flex-col items-center justify-center gap-4 border border-gray-200">
+                    <div className="w-full flex justify-between items-center text-gray-700">
+                        <div>2025/03/25</div>
+                        <div>7:30PM</div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex w-full">
+                            <div className="w-24 font-medium">Airplane:</div>
+                            <div>WMT6UC</div>
+                        </div>
+                        <div className="flex w-full">
+                            <div className="w-24 font-medium">Flight:</div>
+                            <div>W43238</div>
+                        </div>
+                        <div className="flex w-full">
+                            <div className="w-24 font-medium">Origin:</div>
+                            <div>BUD</div>
+                        </div>
+                    </div>
+                    <div className="w-full flex items-center justify-center gap-2">
+                        <ArrivalIcon width="2rem" height="2rem" className="text-gray-500" />
+                        <a>Latest arrival</a>
+                    </div>
                 </div>
 
-                <div className="bg-white dark:bg-tp-gray-dark rounded-lg shadow-md p-6">
-                    <h2 className="text-xl font-semibold text-tp-gray-dark dark:text-white mb-4">Card Title</h2>
-                    <p className="text-tp-gray-light dark:text-tp-gray-dark mb-4">
-                        This is a simple card component that can be used to display content.
-                    </p>
-                    <button className="bg-tp-blue text-white px-4 py-2 rounded hover:bg-tp-blue-dark transition-colors">
-                        Action Button
-                    </button>
+                <div className="w-full h-full rounded-lg p-6 flex flex-col items-center justify-between gap-4 border border-gray-200">
+                    <div className="w-full flex justify-between items-center" aria-hidden="true">
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                    </div>
+
+                    <div className="flex flex-col items-center justify-center">
+                        <div className="text-5xl mb-2" aria-label="8564 pasageri">8564</div>
+                    </div>
+
+                    <div className="w-full flex items-center justify-center gap-2 mt-2">
+                        <PassengersIcon width="2rem" height="2rem" className="text-gray-500" />
+                        <a>Passengers today</a>
+                    </div>
                 </div>
 
-                <div className="bg-white dark:bg-tp-gray-dark rounded-lg shadow-md p-6">
-                    <h2 className="text-xl font-semibold text-tp-gray-dark dark:text-white mb-4">Card Title</h2>
-                    <p className="text-tp-gray-light dark:text-tp-gray-dark mb-4">
-                        This is a simple card component that can be used to display content.
-                    </p>
-                    <button className="bg-tp-blue text-white px-4 py-2 rounded hover:bg-tp-blue-dark transition-colors">
-                        Action Button
-                    </button>
+                <div className="w-full h-full rounded-lg p-6 flex flex-col items-center justify-center gap-4 border border-gray-200">
+                    <div className="w-full flex justify-between items-center text-gray-700">
+                        <div>2025/03/25</div>
+                        <div>6:42PM</div>
+                    </div>
+                    <div className="flex flex-col items-center">
+                        <div className="flex w-full">
+                            <div className="w-24 font-medium">Airplane:</div>
+                            <div>BAW84KV</div>
+                        </div>
+                        <div className="flex w-full">
+                            <div className="w-24 font-medium">Flight:</div>
+                            <div>BA884</div>
+                        </div>
+                        <div className="flex w-full">
+                            <div className="w-24 font-medium">Origin:</div>
+                            <div>LHR</div>
+                        </div>
+                    </div>
+                    <div className="w-full flex items-center justify-center gap-2">
+                        <DepartureIcon width="2rem" height="2rem" className="text-gray-500" />
+                        <a>Latest departure</a>
+                    </div>
                 </div>
             </div>
         </div>

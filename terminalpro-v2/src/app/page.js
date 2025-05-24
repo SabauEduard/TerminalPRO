@@ -15,353 +15,143 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownItem,
-    Chip,
-    User,
     Pagination,
 } from "@heroui/react";
 import TopPanels from "./components/topPanels";
+import PlusIcon from "./icons/plus";
+import SearchIcon from "./icons/search";
+import ChevronDownIcon from "./icons/chevronDown";
+import VerticalDotsIcon from "./icons/verticalDots";
 
 export const columns = [
     { name: "ID", uid: "id", sortable: true },
-    { name: "NAME", uid: "name", sortable: true },
-    { name: "AGE", uid: "age", sortable: true },
-    { name: "ROLE", uid: "role", sortable: true },
-    { name: "TEAM", uid: "team" },
-    { name: "EMAIL", uid: "email" },
-    { name: "STATUS", uid: "status", sortable: true },
-    { name: "ACTIONS", uid: "actions" },
+    { name: "AIRLINE", uid: "airline", sortable: true },
+    { name: "ICAO", uid: "icao", sortable: true },
+    { name: "MODEL", uid: "model", sortable: true },
+    { name: "LANDED AT", uid: "landed_at", sortable: true }
 ];
 
-export const statusOptions = [
-    { name: "Active", uid: "active" },
-    { name: "Paused", uid: "paused" },
-    { name: "Vacation", uid: "vacation" },
-];
-
-export const users = [
+export const grounded_airplanes = [
     {
-        id: 1,
-        name: "Tony Reichert",
-        role: "CEO",
-        team: "Management",
-        status: "active",
-        age: "29",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-        email: "tony.reichert@example.com",
+        id: "1",
+        airline: "TAROM",
+        icao: "ROT3476",
+        model: "Boeing 737-700",
+        landed_at: "2025-03-25 07:15",
     },
     {
-        id: 2,
-        name: "Zoey Lang",
-        role: "Tech Lead",
-        team: "Development",
-        status: "paused",
-        age: "25",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
-        email: "zoey.lang@example.com",
+        id: "2",
+        airline: "Wizz Air",
+        icao: "WZZ8KJ2",
+        model: "Airbus A321neo",
+        landed_at: "2025-03-25 08:22",
     },
     {
-        id: 3,
-        name: "Jane Fisher",
-        role: "Sr. Dev",
-        team: "Development",
-        status: "active",
-        age: "22",
-        avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
-        email: "jane.fisher@example.com",
+        id: "3",
+        airline: "Lufthansa",
+        icao: "DLH18F3",
+        model: "Airbus A320",
+        landed_at: "2025-03-25 09:05",
     },
     {
-        id: 4,
-        name: "William Howard",
-        role: "C.M.",
-        team: "Marketing",
-        status: "vacation",
-        age: "28",
-        avatar: "https://i.pravatar.cc/150?u=a048581f4e29026701d",
-        email: "william.howard@example.com",
+        id: "4",
+        airline: "Ryanair",
+        icao: "RYR6Z19",
+        model: "Boeing 737-800",
+        landed_at: "2025-03-25 09:38",
     },
     {
-        id: 5,
-        name: "Kristen Copper",
-        role: "S. Manager",
-        team: "Sales",
-        status: "active",
-        age: "24",
-        avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
-        email: "kristen.cooper@example.com",
+        id: "5",
+        airline: "Blue Air",
+        icao: "BLA5T31",
+        model: "Boeing 737-500",
+        landed_at: "2025-03-25 10:11",
     },
     {
-        id: 6,
-        name: "Brian Kim",
-        role: "P. Manager",
-        team: "Management",
-        age: "29",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
-        email: "brian.kim@example.com",
-        status: "Active",
+        id: "6",
+        airline: "KLM",
+        icao: "KLM89P2",
+        model: "Embraer E190",
+        landed_at: "2025-03-25 10:47",
     },
     {
-        id: 7,
-        name: "Michael Hunt",
-        role: "Designer",
-        team: "Design",
-        status: "paused",
-        age: "27",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e29027007d",
-        email: "michael.hunt@example.com",
+        id: "7",
+        airline: "Turkish Airlines",
+        icao: "THY42R7",
+        model: "Airbus A330-300",
+        landed_at: "2025-03-25 11:30",
     },
     {
-        id: 8,
-        name: "Samantha Brooks",
-        role: "HR Manager",
-        team: "HR",
-        status: "active",
-        age: "31",
-        avatar: "https://i.pravatar.cc/150?u=a042581f4e27027008d",
-        email: "samantha.brooks@example.com",
+        id: "8",
+        airline: "British Airways",
+        icao: "BAW84KV",
+        model: "Boeing 777-300ER",
+        landed_at: "2025-03-25 12:25",
     },
     {
-        id: 9,
-        name: "Frank Harrison",
-        role: "F. Manager",
-        team: "Finance",
-        status: "vacation",
-        age: "33",
-        avatar: "https://i.pravatar.cc/150?img=4",
-        email: "frank.harrison@example.com",
+        id: "9",
+        airline: "Air France",
+        icao: "AFR67L9",
+        model: "Airbus A319",
+        landed_at: "2025-03-25 13:08",
     },
     {
-        id: 10,
-        name: "Emma Adams",
-        role: "Ops Manager",
-        team: "Operations",
-        status: "active",
-        age: "35",
-        avatar: "https://i.pravatar.cc/150?img=5",
-        email: "emma.adams@example.com",
+        id: "10",
+        airline: "LOT Polish Airlines",
+        icao: "LOT23H5",
+        model: "Boeing 787-8",
+        landed_at: "2025-03-25 14:15",
     },
     {
-        id: 11,
-        name: "Brandon Stevens",
-        role: "Jr. Dev",
-        team: "Development",
-        status: "active",
-        age: "22",
-        avatar: "https://i.pravatar.cc/150?img=8",
-        email: "brandon.stevens@example.com",
+        id: "11",
+        airline: "Aegean Airlines",
+        icao: "AEE76T2",
+        model: "Airbus A320neo",
+        landed_at: "2025-03-25 15:22",
     },
     {
-        id: 12,
-        name: "Megan Richards",
-        role: "P. Manager",
-        team: "Product",
-        status: "paused",
-        age: "28",
-        avatar: "https://i.pravatar.cc/150?img=10",
-        email: "megan.richards@example.com",
+        id: "12",
+        airline: "Austrian Airlines",
+        icao: "AUA19P7",
+        model: "Embraer E195",
+        landed_at: "2025-03-25 16:05",
     },
     {
-        id: 13,
-        name: "Oliver Scott",
-        role: "S. Manager",
-        team: "Security",
-        status: "active",
-        age: "37",
-        avatar: "https://i.pravatar.cc/150?img=12",
-        email: "oliver.scott@example.com",
+        id: "13",
+        airline: "Qatar Airways",
+        icao: "QTR82K3",
+        model: "Airbus A350-900",
+        landed_at: "2025-03-25 17:34",
     },
     {
-        id: 14,
-        name: "Grace Allen",
-        role: "M. Specialist",
-        team: "Marketing",
-        status: "active",
-        age: "30",
-        avatar: "https://i.pravatar.cc/150?img=16",
-        email: "grace.allen@example.com",
+        id: "14",
+        airline: "Aeroflot",
+        icao: "AFL56N8",
+        model: "Sukhoi Superjet 100",
+        landed_at: "2025-03-25 18:19",
     },
     {
-        id: 15,
-        name: "Noah Carter",
-        role: "IT Specialist",
-        team: "I. Technology",
-        status: "paused",
-        age: "31",
-        avatar: "https://i.pravatar.cc/150?img=15",
-        email: "noah.carter@example.com",
-    },
-    {
-        id: 16,
-        name: "Ava Perez",
-        role: "Manager",
-        team: "Sales",
-        status: "active",
-        age: "29",
-        avatar: "https://i.pravatar.cc/150?img=20",
-        email: "ava.perez@example.com",
-    },
-    {
-        id: 17,
-        name: "Liam Johnson",
-        role: "Data Analyst",
-        team: "Analysis",
-        status: "active",
-        age: "28",
-        avatar: "https://i.pravatar.cc/150?img=33",
-        email: "liam.johnson@example.com",
-    },
-    {
-        id: 18,
-        name: "Sophia Taylor",
-        role: "QA Analyst",
-        team: "Testing",
-        status: "active",
-        age: "27",
-        avatar: "https://i.pravatar.cc/150?img=29",
-        email: "sophia.taylor@example.com",
-    },
-    {
-        id: 19,
-        name: "Lucas Harris",
-        role: "Administrator",
-        team: "Information Technology",
-        status: "paused",
-        age: "32",
-        avatar: "https://i.pravatar.cc/150?img=50",
-        email: "lucas.harris@example.com",
-    },
-    {
-        id: 20,
-        name: "Mia Robinson",
-        role: "Coordinator",
-        team: "Operations",
-        status: "active",
-        age: "26",
-        avatar: "https://i.pravatar.cc/150?img=45",
-        email: "mia.robinson@example.com",
-    },
+        id: "15",
+        airline: "Wizz Air",
+        icao: "WMT6UC",
+        model: "Airbus A320",
+        landed_at: "2025-03-25 19:30",
+    }
 ];
 
 export function capitalize(s) {
     return s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : "";
 }
 
-export const PlusIcon = ({ size = 24, width, height, ...props }) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height={size || height}
-            role="presentation"
-            viewBox="0 0 24 24"
-            width={size || width}
-            {...props}
-        >
-            <g
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-            >
-                <path d="M6 12h12" />
-                <path d="M12 18V6" />
-            </g>
-        </svg>
-    );
-};
-
-export const VerticalDotsIcon = ({ size = 24, width, height, ...props }) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height={size || height}
-            role="presentation"
-            viewBox="0 0 24 24"
-            width={size || width}
-            {...props}
-        >
-            <path
-                d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                fill="currentColor"
-            />
-        </svg>
-    );
-};
-
-export const SearchIcon = (props) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height="1em"
-            role="presentation"
-            viewBox="0 0 24 24"
-            width="1em"
-            {...props}
-        >
-            <path
-                d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-            />
-            <path
-                d="M22 22L20 20"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-            />
-        </svg>
-    );
-};
-
-export const ChevronDownIcon = ({ strokeWidth = 1.5, ...otherProps }) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height="1em"
-            role="presentation"
-            viewBox="0 0 24 24"
-            width="1em"
-            {...otherProps}
-        >
-            <path
-                d="m19.92 8.95-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeMiterlimit={10}
-                strokeWidth={strokeWidth}
-            />
-        </svg>
-    );
-};
-
-const statusColorMap = {
-    active: "success",
-    paused: "danger",
-    vacation: "warning",
-};
-
-const INITIAL_VISIBLE_COLUMNS = ["name", "role", "status", "actions"];
+const INITIAL_VISIBLE_COLUMNS = ["airline", "icao", "model", "landed_at"];
 
 export default function Home() {
     const [filterValue, setFilterValue] = React.useState("");
-    const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
     const [visibleColumns, setVisibleColumns] = React.useState(new Set(INITIAL_VISIBLE_COLUMNS));
-    const [statusFilter, setStatusFilter] = React.useState("all");
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const [sortDescriptor, setSortDescriptor] = React.useState({
-        column: "age",
-        direction: "ascending",
+        column: "landed_at",
+        direction: "descending",
     });
     const [page, setPage] = React.useState(1);
 
@@ -371,24 +161,19 @@ export default function Home() {
         if (visibleColumns === "all") return columns;
 
         return columns.filter((column) => Array.from(visibleColumns).includes(column.uid));
-    }, [visibleColumns]);
-
-    const filteredItems = React.useMemo(() => {
-        let filteredUsers = [...users];
+    }, [visibleColumns]); const filteredItems = React.useMemo(() => {
+        let filteredAirplanes = [...grounded_airplanes];
 
         if (hasSearchFilter) {
-            filteredUsers = filteredUsers.filter((user) =>
-                user.name.toLowerCase().includes(filterValue.toLowerCase()),
-            );
-        }
-        if (statusFilter !== "all" && Array.from(statusFilter).length !== statusOptions.length) {
-            filteredUsers = filteredUsers.filter((user) =>
-                Array.from(statusFilter).includes(user.status),
+            filteredAirplanes = filteredAirplanes.filter((airplane) =>
+                airplane.airline.toLowerCase().includes(filterValue.toLowerCase()) ||
+                airplane.icao.toLowerCase().includes(filterValue.toLowerCase()) ||
+                airplane.model.toLowerCase().includes(filterValue.toLowerCase())
             );
         }
 
-        return filteredUsers;
-    }, [users, filterValue, statusFilter]);
+        return filteredAirplanes;
+    }, [grounded_airplanes, filterValue]);
 
     const pages = Math.ceil(filteredItems.length / rowsPerPage) || 1;
 
@@ -409,53 +194,10 @@ export default function Home() {
         });
     }, [sortDescriptor, items]);
 
-    const renderCell = React.useCallback((user, columnKey) => {
-        const cellValue = user[columnKey];
+    const renderCell = React.useCallback((airplane, columnKey) => {
+        const cellValue = airplane[columnKey];
 
-        switch (columnKey) {
-            case "name":
-                return (
-                    <User
-                        avatarProps={{ radius: "lg", src: user.avatar }}
-                        description={user.email}
-                        name={cellValue}
-                    >
-                        {user.email}
-                    </User>
-                );
-            case "role":
-                return (
-                    <div className="flex flex-col">
-                        <p className="text-bold text-small capitalize">{cellValue}</p>
-                        <p className="text-bold text-tiny capitalize text-default-400">{user.team}</p>
-                    </div>
-                );
-            case "status":
-                return (
-                    <Chip className="capitalize" color={statusColorMap[user.status]} size="sm" variant="flat">
-                        {cellValue}
-                    </Chip>
-                );
-            case "actions":
-                return (
-                    <div className="relative flex justify-end items-center gap-2">
-                        <Dropdown>
-                            <DropdownTrigger>
-                                <Button isIconOnly size="sm" variant="light">
-                                    <VerticalDotsIcon className="text-default-300" />
-                                </Button>
-                            </DropdownTrigger>
-                            <DropdownMenu>
-                                <DropdownItem key="view">View</DropdownItem>
-                                <DropdownItem key="edit">Edit</DropdownItem>
-                                <DropdownItem key="delete">Delete</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </div>
-                );
-            default:
-                return cellValue;
-        }
+        return cellValue;
     }, []);
 
     const onNextPage = React.useCallback(() => {
@@ -492,38 +234,16 @@ export default function Home() {
     const topContent = React.useMemo(() => {
         return (
             <div className="flex flex-col gap-4">
-                <div className="flex justify-between gap-3 items-end">
-                    <Input
-                        isClearable
-                        className="w-full sm:max-w-[44%]"
-                        placeholder="Search by name..."
-                        startContent={<SearchIcon />}
-                        value={filterValue}
-                        onClear={() => onClear()}
-                        onValueChange={onSearchChange}
-                    />
+                <div className="flex justify-between gap-3 items-end">                    <Input
+                    isClearable
+                    className="w-full sm:max-w-[44%]"
+                    placeholder="Search by airline, ICAO or model..."
+                    startContent={<SearchIcon />}
+                    value={filterValue}
+                    onClear={() => onClear()}
+                    onValueChange={onSearchChange}
+                />
                     <div className="flex gap-3">
-                        <Dropdown>
-                            <DropdownTrigger className="hidden sm:flex">
-                                <Button endContent={<ChevronDownIcon className="text-small" />} variant="flat">
-                                    Status
-                                </Button>
-                            </DropdownTrigger>
-                            <DropdownMenu
-                                disallowEmptySelection
-                                aria-label="Table Columns"
-                                closeOnSelect={false}
-                                selectedKeys={statusFilter}
-                                selectionMode="multiple"
-                                onSelectionChange={setStatusFilter}
-                            >
-                                {statusOptions.map((status) => (
-                                    <DropdownItem key={status.uid} className="capitalize">
-                                        {capitalize(status.name)}
-                                    </DropdownItem>
-                                ))}
-                            </DropdownMenu>
-                        </Dropdown>
                         <Dropdown>
                             <DropdownTrigger className="hidden sm:flex">
                                 <Button endContent={<ChevronDownIcon className="text-small" />} variant="flat">
@@ -545,13 +265,10 @@ export default function Home() {
                                 ))}
                             </DropdownMenu>
                         </Dropdown>
-                        <Button color="primary" endContent={<PlusIcon />}>
-                            Add New
-                        </Button>
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Total {users.length} users</span>
+                    <span className="text-default-400 text-small">Total {grounded_airplanes.length} airplanes</span>
                     <label className="flex items-center text-default-400 text-small">
                         Rows per page:
                         <select
@@ -568,22 +285,16 @@ export default function Home() {
         );
     }, [
         filterValue,
-        statusFilter,
         visibleColumns,
         onRowsPerPageChange,
-        users.length,
+        grounded_airplanes.length,
         onSearchChange,
         hasSearchFilter,
     ]);
 
     const bottomContent = React.useMemo(() => {
         return (
-            <div className="py-2 px-2 flex justify-between items-center">
-                <span className="w-[30%] text-small text-default-400">
-                    {selectedKeys === "all"
-                        ? "All items selected"
-                        : `${selectedKeys.size} of ${filteredItems.length} selected`}
-                </span>
+            <div className="py-2 px-2 flex justify-center items-center">
                 <Pagination
                     isCompact
                     showControls
@@ -593,25 +304,14 @@ export default function Home() {
                     total={pages}
                     onChange={setPage}
                 />
-                <div className="hidden sm:flex w-[30%] justify-end gap-2">
-                    <Button isDisabled={pages === 1} size="sm" variant="flat" onPress={onPreviousPage}>
-                        Previous
-                    </Button>
-                    <Button isDisabled={pages === 1} size="sm" variant="flat" onPress={onNextPage}>
-                        Next
-                    </Button>
-                </div>
             </div>
         );
-    }, [selectedKeys, items.length, page, pages, hasSearchFilter]);
+    }, [items.length, page, pages, hasSearchFilter]);
 
     return (
         <div className="w-full flex flex-col items-center gap-4">
             <TopPanels />
             <iframe
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
                 className="w-full rounded-[7px]"
                 height="500"
                 src="https://www.airnavradar.com/?widget=1&z=10&airport=LROP&class=A"
@@ -619,41 +319,43 @@ export default function Home() {
                 aria-label="Vizualizare în timp real a traficului aerian pentru aeroportul Henri Coandă din București. Această hartă interactivă afișează zborurile active în zona aeroportului."
                 lang="ro">
             </iframe>
-            <Table
-                isHeaderSticky
-                aria-label="Example table with custom cells, pagination and sorting"
-                bottomContent={bottomContent}
-                bottomContentPlacement="outside"
-                classNames={{
-                    wrapper: "max-h-[382px]",
-                }}
-                selectedKeys={selectedKeys}
-                selectionMode="multiple"
-                sortDescriptor={sortDescriptor}
-                topContent={topContent}
-                topContentPlacement="outside"
-                onSelectionChange={setSelectedKeys}
-                onSortChange={setSortDescriptor}
-            >
-                <TableHeader columns={headerColumns}>
-                    {(column) => (
-                        <TableColumn
-                            key={column.uid}
-                            align={column.uid === "actions" ? "center" : "start"}
-                            allowsSorting={column.sortable}
-                        >
-                            {column.name}
-                        </TableColumn>
-                    )}
-                </TableHeader>
-                <TableBody emptyContent={"No users found"} items={sortedItems}>
-                    {(item) => (
-                        <TableRow key={item.id}>
-                            {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
-                        </TableRow>
-                    )}
-                </TableBody>
-            </Table>
+            <div className="w-full rounded-[7px] p-6 border border-gray-200 flex flex-col gap-4">
+                <h2 className="text-2xl text-gray-600">
+                    GROUNDED PLANES
+                </h2>
+                <Table
+                    isHeaderSticky
+                    aria-label="Grounded planes"
+                    bottomContent={bottomContent}
+                    bottomContentPlacement="outside"
+                    classNames={{
+                        wrapper: "max-h-[382px]",
+                    }}
+                    sortDescriptor={sortDescriptor}
+                    topContent={topContent}
+                    topContentPlacement="outside"
+                    onSortChange={setSortDescriptor}
+                >
+                    <TableHeader columns={headerColumns}>
+                        {(column) => (
+                            <TableColumn
+                                key={column.uid}
+                                align={column.uid === "actions" ? "center" : "start"}
+                                allowsSorting={column.sortable}
+                            >
+                                {column.name}
+                            </TableColumn>
+                        )}
+                    </TableHeader>
+                    <TableBody emptyContent={"No planes on the ground"} items={sortedItems}>
+                        {(item) => (
+                            <TableRow key={item.id}>
+                                {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
+                            </TableRow>
+                        )}
+                    </TableBody>
+                </Table>
+            </div>
         </div>
     );
 }
