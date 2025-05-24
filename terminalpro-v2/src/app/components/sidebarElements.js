@@ -25,7 +25,7 @@ export default function SidebarElements() {
                 <Link
                     href={element.href}
                     key={index}
-                    className={`${pathname === element.href ? 'bg-tp-purple text-white' : 'text-gray-700'} flex items-center gap-3 p-2 hover:bg-tp-purple/[0.75] hover:text-white rounded-md cursor-pointer`}
+                    className={`${pathname === element.href ? 'bg-tp-purple-medium text-white' : 'text-gray-700'} flex items-center gap-3 p-2 hover:bg-tp-purple-medium/[0.85] hover:text-white focus:bg-tp-purple-dark focus:text-white rounded-md cursor-pointer`}
                 >
                     {element.icon}
                     <span>{element.name}</span>

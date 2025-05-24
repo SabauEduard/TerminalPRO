@@ -9,7 +9,7 @@ export default function Logo() {
                 <span className="text-2xl text-gray-800">
                     Terminal
                 </span>
-                <span className="text-2xl text-tp-purple">PRO</span>
+                <span className="text-2xl text-tp-purple-medium">PRO</span>
             </div>
         </div>
     );

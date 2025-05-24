@@ -6,7 +6,7 @@ export default function PageFrame({ children }) {
             <div className="w-64">
                 <Sidebar />
             </div>
-            <div className="flex-1 w-full bg-amber-500">
+            <div className="flex-1 w-full">
                 {children}
             </div>
         </div>
