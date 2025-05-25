@@ -33,6 +33,21 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Animații pentru meniul dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
 
 .active {
   background: var(--color-tp-purple);
