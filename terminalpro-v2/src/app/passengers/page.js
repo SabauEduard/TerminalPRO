@@ -22,6 +22,7 @@ import {
     DrawerHeader,
     DrawerBody
 } from "@heroui/react";
+import Barcode from 'react-barcode';
 
 import SearchIcon from "../icons/search";
 import VerticalDotsIcon from "../icons/verticalDots";
@@ -664,8 +665,12 @@ export default function Passengers() {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className='w-full h-[150px] flex items-center justify-center'>
-                                                        <img src="/cod_bare.png" alt="Ticket" width={250} height={150} />
+                                                    <div className='w-full h-[150px] flex items-center justify-center px-6'>
+                                                        <div>
+                                                            <Barcode value={upcomingFlight.flight + upcomingFlight.seat + activeUser.id}
+                                                                displayValue={false}
+                                                                className="w-full h-full" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
