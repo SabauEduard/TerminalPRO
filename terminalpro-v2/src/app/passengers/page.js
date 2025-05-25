@@ -15,24 +15,27 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownItem,
-    Chip,
-    User,
     Pagination,
-    user,
+    useDisclosure,
+    Drawer,
+    DrawerContent,
+    DrawerHeader,
+    DrawerBody
 } from "@heroui/react";
+
+import SearchIcon from "../icons/search";
+import VerticalDotsIcon from "../icons/verticalDots";
+import ChevronDownIcon from "../icons/chevronDown";
+import AirplaneIcon from "../icons/airplane";
+import SeatIcon from "../icons/seat";
+import FlyingPlane from "../icons/flyingPlane";
 
 export const columns = [
     { name: "ID", uid: "id", sortable: true },
     { name: "NAME", uid: "name", sortable: true },
     { name: "PHONE", uid: "phone" },
     { name: "EMAIL", uid: "email" },
-    { name: "ACTIONS", uid: "actions"}
-];
-
-export const statusOptions = [
-    { name: "Active", uid: "active" },
-    { name: "Paused", uid: "paused" },
-    { name: "Vacation", uid: "vacation" },
+    { name: "ACTIONS", uid: "actions" }
 ];
 
 export const users = [
@@ -216,119 +219,13 @@ export function capitalize(s) {
     return s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : "";
 }
 
-export const PlusIcon = ({ size = 24, width, height, ...props }) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height={size || height}
-            role="presentation"
-            viewBox="0 0 24 24"
-            width={size || width}
-            {...props}
-        >
-            <g
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-            >
-                <path d="M6 12h12" />
-                <path d="M12 18V6" />
-            </g>
-        </svg>
-    );
-};
-
-export const VerticalDotsIcon = ({ size = 24, width, height, ...props }) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height={size || height}
-            role="presentation"
-            viewBox="0 0 24 24"
-            width={size || width}
-            {...props}
-        >
-            <path
-                d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                fill="currentColor"
-            />
-        </svg>
-    );
-};
-
-export const SearchIcon = (props) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height="1em"
-            role="presentation"
-            viewBox="0 0 24 24"
-            width="1em"
-            {...props}
-        >
-            <path
-                d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-            />
-            <path
-                d="M22 22L20 20"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-            />
-        </svg>
-    );
-};
-
-export const ChevronDownIcon = ({ strokeWidth = 1.5, ...otherProps }) => {
-    return (
-        <svg
-            aria-hidden="true"
-            fill="none"
-            focusable="false"
-            height="1em"
-            role="presentation"
-            viewBox="0 0 24 24"
-            width="1em"
-            {...otherProps}
-        >
-            <path
-                d="m19.92 8.95-6.52 6.52c-.77.77-2.03.77-2.8 0L4.08 8.95"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeMiterlimit={10}
-                strokeWidth={strokeWidth}
-            />
-        </svg>
-    );
-};
-
-const statusColorMap = {
-    active: "success",
-    paused: "danger",
-    vacation: "warning",
-};
-
 const INITIAL_VISIBLE_COLUMNS = ["id", "name", "phone", "email", "actions"];
 
 export default function Passengers() {
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const [activeUser, setActiveUser] = React.useState(null);
     const [filterValue, setFilterValue] = React.useState("");
-    const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
     const [visibleColumns, setVisibleColumns] = React.useState(new Set(INITIAL_VISIBLE_COLUMNS));
-    const [statusFilter, setStatusFilter] = React.useState("all");
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const [sortDescriptor, setSortDescriptor] = React.useState({
         column: "name",
@@ -354,14 +251,9 @@ export default function Passengers() {
                 user.email.toLowerCase().includes(filterValue.toLocaleLowerCase())
             );
         }
-        if (statusFilter !== "all" && Array.from(statusFilter).length !== statusOptions.length) {
-            filteredUsers = filteredUsers.filter((user) =>
-                Array.from(statusFilter).includes(user.status),
-            );
-        }
 
         return filteredUsers;
-    }, [users, filterValue, statusFilter]);
+    }, [users, filterValue]);
 
     const pages = Math.ceil(filteredItems.length / rowsPerPage) || 1;
 
@@ -500,7 +392,6 @@ export default function Passengers() {
         );
     }, [
         filterValue,
-        statusFilter,
         visibleColumns,
         onRowsPerPageChange,
         users.length,
@@ -527,7 +418,7 @@ export default function Passengers() {
 
     return (
         <div className="min-h-screen">
-            <h1 className="text-gray-600 text-3xl font-medium pb-8">PASSENGERS</h1>
+            <h1 className="text-gray-600 text-3xl pb-8">PASSENGERS</h1>
             <Table
                 isHeaderSticky
                 aria-label="Table with registered passengers"
@@ -556,12 +447,105 @@ export default function Passengers() {
                 </TableHeader>
                 <TableBody emptyContent={"No users found"} items={sortedItems}>
                     {(item) => (
-                        <TableRow key={item.id}>
+                        <TableRow
+                            onClick={() => {
+                                setActiveUser(item);
+                                onOpen();
+                            }}
+                            // onPress={onOpen}
+                            key={item.id}>
                             {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
                         </TableRow>
                     )}
                 </TableBody>
             </Table>
+            <Drawer isOpen={isOpen} onOpenChange={onOpenChange} className="z-1000 " disableAnimation="true" size="xl">
+                <DrawerContent className="h-full">
+                    {(onClose) => (
+                        <div className="p-6">
+                            <DrawerHeader>
+                                <div className="w-full flex justify-between items-center">
+                                    <h2 className="text-2xl uppercase">{activeUser.name}</h2>
+                                    <Button radius="sm" className="bg-tp-blue-light">EDIT</Button>
+                                </div>
+                            </DrawerHeader>
+                            <DrawerBody className="h-full">
+                                <div className="flex flex-col items-center">
+                                    <div className="flex w-full">
+                                        <div className="w-18 font-medium">Id:</div>
+                                        <div>{activeUser.id}</div>
+                                    </div>
+                                    <div className="flex w-full">
+                                        <div className="w-18 font-medium">Name:</div>
+                                        <div>{activeUser.name}</div>
+                                    </div>
+                                    <div className="flex w-full">
+                                        <div className="w-18 font-medium">Phone:</div>
+                                        <div>{activeUser.phone}</div>
+                                    </div>
+                                    <div className="flex w-full">
+                                        <div className="w-18 font-medium">Email:</div>
+                                        <div>{activeUser.email}</div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-6">
+                                    <h3 className="text-xl uppercase text-gray-600">Latest ticket</h3>
+                                    <div className="w-full h-[430px] flex items-center justify-center py-4">
+                                        <div className="bg-white w-[75%] h-full rounded-xl relative shadow-ticket-info">
+                                            <div className="absolute w-[50px] h-[50px] rounded-full bg-white bottom-[125px] left-[-25px] shadow-circle1"></div>
+                                            <div className="absolute w-[50px] h-[50px] rounded-full bg-white bottom-[125px] right-[-25px] shadow-circle2"></div>
+                                            <div className="absolute w-[50px] h-[50px] bg-white bottom-[125px] left-[-50px]"></div>
+                                            <div className="absolute w-[50px] h-[50px] bg-white bottom-[125px] right-[-50px]"></div>
+                                            <div className="absolute left-[25px] bottom-[150px] border-1 border-dashed w-dashed-line"></div>
+                                            <div className='h-[275px] w-full flex flex-col'>
+                                                <div className='p-6 justify-between flex'>
+                                                    <div className='flex pr-6 items-center gap-2'>
+                                                        <SeatIcon />
+                                                        <h3 className="text-2xl">25B</h3>
+                                                    </div>
+                                                    <div className='flex pr-6 items-center gap-2'>
+                                                        <h3 className="text-2xl">OTP</h3>
+                                                        <FlyingPlane width="1rem" height="1rem" />
+                                                        <h3 className="text-2xl">ZTH</h3>
+                                                    </div>
+                                                </div>
+                                                <div className='flex flex-col items-start px-12 w-full'>
+                                                    <div className="grid grid-cols-2 gap-x-12 gap-y-2 w-full max-w-md">
+                                                        <div>
+                                                            <div className="text-gray-600">Flight</div>
+                                                            <div className="font-medium">W43238</div>
+                                                        </div>
+                                                        <div>
+                                                            <div className="text-gray-600">Date</div>
+                                                            <div className="font-medium">15 Mar 2025</div>
+                                                        </div>
+                                                        <div>
+                                                            <div className="text-gray-600">Class</div>
+                                                            <div className="font-medium">Economy</div>
+                                                        </div>
+                                                        <div>
+                                                            <div className="text-gray-600">Gate</div>
+                                                            <div className="font-medium">102A</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='w-full h-[125px] bottom-0 flex items-center justify-center'>
+                                                <img src="/cod_bare.png" alt="Ticket" width={250} height={150} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-6">
+                                    <h3 className="text-xl uppercase text-gray-600">All tickets</h3>
+                                </div>
+                            </DrawerBody>
+                        </div>
+                    )}
+                </DrawerContent>
+            </Drawer>
         </div>
     );
 }

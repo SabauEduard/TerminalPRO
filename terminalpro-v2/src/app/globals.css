@@ -1,4 +1,3 @@
-@import "@flaticon/flaticon-uicons/css/all/all.css";
 @import "tailwindcss";
 @plugin '../../hero.ts';
 @source '../../node_modules/@heroui/theme/dist*.{js,ts,jsx,tsx}';
@@ -16,6 +15,10 @@
   --color-tp-purple-dark: #453796;
   --color-tp-gray-light: #dedede;
   --color-tp-blue-light: #B6DEFF;
+  --shadow-circle1: inset -4px 0px 4px rgba(0, 0, 0, 0.09);
+  --shadow-circle2: inset 4px 0px 4px rgba(0, 0, 0, 0.09);
+  --shadow-ticket-info: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
+  --width-dashed-line: calc(100% - 50px);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
