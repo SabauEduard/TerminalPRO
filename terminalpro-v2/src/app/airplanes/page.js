@@ -201,6 +201,7 @@ export default function App() {
     const [page, setPage] = React.useState(1);
 
     const hasSearchFilter = Boolean(filterValue);
+    const [action, setAction] = React.useState(null);
 
     const headerColumns = React.useMemo(() => {
         if (visibleColumns === "all") return columns;
@@ -214,8 +215,10 @@ export default function App() {
         if (hasSearchFilter) {
             filteredAirplanes = filteredAirplanes.filter((airplane) =>
                 airplane.model.toLowerCase().includes(filterValue.toLowerCase()) ||
+                airplane.registration.toLowerCase().includes(filterValue.toLowerCase()) ||
                 airplane.airline.toLowerCase().includes(filterValue.toLowerCase()) ||
-                airplane.capacity.toString().includes(filterValue)
+                airplane.capacity.toString().includes(filterValue) ||
+                airplane.callsign.toLowerCase().includes(filterValue.toLowerCase())
             );
         }
 
@@ -335,7 +338,7 @@ export default function App() {
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Total {airplanes.length} airplanes</span>
+                    <span className="text-default-400 text-small">Total {filteredItems.length} airplanes</span>
                     <label className="flex items-center text-default-400 text-small">
                         Rows per page:
                         <select
@@ -377,7 +380,7 @@ export default function App() {
     }, [items.length, page, pages, hasSearchFilter]);
 
     return (
-        <div className="min-h-screen">
+        <div>
             <h1 className="text-gray-600 text-3xl font-medium pb-8">AIRPLANES</h1>
             <Table
                 isHeaderSticky
@@ -421,11 +424,20 @@ export default function App() {
                                 <h1 className="text-gray-600 text-2xl font-medium pb-8">ADD AIRPLANE</h1>
                             </ModalHeader>
                             <ModalBody>
-                                <Form className="w-full flex flex-col gap-4">
+                                <Form className="w-full flex flex-col gap-8"
+                                    onReset={() => setAction("reset")}
+                                    onSubmit={(e) => {
+                                        e.preventDefault();
+                                        let data = Object.fromEntries(new FormData(e.currentTarget));
+
+                                        console.log(JSON.stringify(data));
+                                    }}
+                                >
                                     <div className="w-full flex gap-4 flex-row">
                                         <Autocomplete
                                             isRequired
                                             label="Model"
+                                            name="model"
                                             labelPlacement="outside"
                                             placeholder="Select aircraft model"
                                         >
@@ -440,6 +452,7 @@ export default function App() {
                                         <Autocomplete
                                             isRequired
                                             label="Airline"
+                                            name="airline"
                                             labelPlacement="outside"
                                             placeholder="Select the operationg airline"
                                         >
@@ -451,6 +464,7 @@ export default function App() {
                                         </Autocomplete>
                                         <Input
                                             isRequired
+                                            name="registration"
                                             label="Registration"
                                             labelPlacement="outside"
                                             placeholder="Enter airpline's registration number"
@@ -459,26 +473,31 @@ export default function App() {
                                     <div className="w-full flex gap-4 flex-row">
                                         <Input
                                             isRequired
+                                            name="callsign"
                                             label="Call Sign"
                                             labelPlacement="outside"
                                             placeholder="Enter airpline's call sign"
                                         />
                                         <Input
                                             isRequired
+                                            name="capacity"
                                             label="Capacity"
                                             labelPlacement="outside"
                                             placeholder="Enter airpline's capacity"
+                                            type="number"
                                         />
+                                    </div>
+                                    <div className="flex justify-end w-full gap-4">
+                                        <Button color="default" type="reset" variant="flat">
+                                            Reset
+                                        </Button>
+                                        <Button type="submit" color="secondary">
+                                            Add
+                                        </Button>
                                     </div>
                                 </Form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="danger" variant="flat" onPress={onClose}>
-                                    Close
-                                </Button>
-                                <Button color="primary" onPress={onClose}>
-                                    Sign in
-                                </Button>
                             </ModalFooter>
                         </>
                     )}
