@@ -410,7 +410,7 @@ export default function App() {
                 </TableHeader>
                 <TableBody emptyContent={"No airplanes found"} items={sortedItems}>
                     {(item) => (
-                        <TableRow key={item.registration}>
+                        <TableRow key={item.registration} className="h-14">
                             {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
                         </TableRow>
                     )}
