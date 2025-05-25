@@ -22,7 +22,7 @@ export default function SidebarElements() {
     return (
         <div className="flex flex-col mt-8 gap-1 items-center">
             {sidebarElements.map((element, index) => (
-                <div key={index} className="w-full">
+                <div key={index} className="w-full flex flex-col items-center">
                     <Link
                         href={element.href}
                         className={`${pathname === element.href ? 'bg-tp-purple-medium text-white' : 'text-gray-700'} flex w-full items-center gap-3 p-3 hover:bg-tp-purple-medium/[0.85] hover:text-white focus:bg-tp-purple-dark focus:text-white rounded-md cursor-pointer`}

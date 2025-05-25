@@ -234,19 +234,21 @@ export default function Home() {
     const topContent = React.useMemo(() => {
         return (
             <div className="flex flex-col gap-4">
-                <div className="flex justify-between gap-3 items-end">                    <Input
-                    isClearable
-                    className="w-full sm:max-w-[44%]"
-                    placeholder="Search by airline, ICAO or model..."
-                    startContent={<SearchIcon />}
-                    value={filterValue}
-                    onClear={() => onClear()}
-                    onValueChange={onSearchChange}
-                />
+                <div className="flex justify-between gap-3 items-end">
+                    <Input
+                        isClearable
+                        className="w-full sm:max-w-[44%]"
+                        radius="sm"
+                        placeholder="Search by airline, ICAO or model..."
+                        startContent={<SearchIcon />}
+                        value={filterValue}
+                        onClear={() => onClear()}
+                        onValueChange={onSearchChange}
+                    />
                     <div className="flex gap-3">
                         <Dropdown>
                             <DropdownTrigger className="hidden sm:flex">
-                                <Button endContent={<ChevronDownIcon className="text-small" />} variant="flat">
+                                <Button className="bg-tp-blue-light" radius="sm" endContent={<ChevronDownIcon className="text-small" />} variant="flat">
                                     Columns
                                 </Button>
                             </DropdownTrigger>
@@ -299,6 +301,7 @@ export default function Home() {
                     isCompact
                     showControls
                     showShadow
+                    radius="sm"
                     color="secondary"
                     page={page}
                     total={pages}
@@ -315,14 +318,14 @@ export default function Home() {
                 <h2 className="text-2xl text-gray-600">
                     LIVE AIR TRAFFIC MAP
                 </h2>
-            <iframe
-                className="w-full rounded-[7px]"
-                height="500"
-                src="https://www.airnavradar.com/?widget=1&z=10&airport=LROP&class=A"
-                title="Hartă radar în timp real pentru aeroportul Henri Coandă (LROP)"
-                aria-label="Vizualizare în timp real a traficului aerian pentru aeroportul Henri Coandă din București. Această hartă interactivă afișează zborurile active în zona aeroportului."
-                lang="ro">
-            </iframe>
+                <iframe
+                    className="w-full rounded-[7px]"
+                    height="500"
+                    src="https://www.airnavradar.com/?widget=1&z=10&airport=LROP&class=A"
+                    title="Hartă radar în timp real pentru aeroportul Henri Coandă (LROP)"
+                    aria-label="Vizualizare în timp real a traficului aerian pentru aeroportul Henri Coandă din București. Această hartă interactivă afișează zborurile active în zona aeroportului."
+                    lang="ro">
+                </iframe>
             </div>
             <div className="w-full rounded-[7px] p-6 border border-gray-200 flex flex-col gap-4">
                 <h2 className="text-2xl text-gray-600">
@@ -336,12 +339,13 @@ export default function Home() {
                     classNames={{
                         wrapper: "max-h-[382px]",
                     }}
+                    radius="sm"
                     sortDescriptor={sortDescriptor}
                     topContent={topContent}
                     topContentPlacement="outside"
                     onSortChange={setSortDescriptor}
                 >
-                    <TableHeader columns={headerColumns}>
+                    <TableHeader radius="sm" columns={headerColumns}>
                         {(column) => (
                             <TableColumn
                                 key={column.uid}
