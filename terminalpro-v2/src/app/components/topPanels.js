@@ -35,7 +35,7 @@ export default function TopPanels() {
                     </div>
                     <div className="w-full flex items-center justify-center gap-2">
                         <ArrivalIcon width="2rem" height="2rem" className="text-gray-500" />
-                        <a>Latest arrival</a>
+                        <a className="text-gray-600">LATEST ARRIVAL</a>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@ export default function TopPanels() {
 
                     <div className="w-full flex items-center justify-center gap-2 mt-2">
                         <PassengersIcon width="2rem" height="2rem" className="text-gray-500" />
-                        <a>Passengers today</a>
+                        <a className="text-gray-600">PASSENGERS TODAY</a>
                     </div>
                 </div>
 
@@ -76,7 +76,7 @@ export default function TopPanels() {
                     </div>
                     <div className="w-full flex items-center justify-center gap-2">
                         <DepartureIcon width="2rem" height="2rem" className="text-gray-500" />
-                        <a>Latest departure</a>
+                        <a className="text-gray-600">LATEST DEPARTURE</a>
                     </div>
                 </div>
             </div>

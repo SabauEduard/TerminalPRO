@@ -311,6 +311,10 @@ export default function Home() {
     return (
         <div className="w-full flex flex-col items-center gap-4">
             <TopPanels />
+            <div className="w-full rounded-[7px] p-6 border border-gray-200 flex flex-col gap-4">
+                <h2 className="text-2xl text-gray-600">
+                    LIVE AIR TRAFFIC MAP
+                </h2>
             <iframe
                 className="w-full rounded-[7px]"
                 height="500"
@@ -319,6 +323,7 @@ export default function Home() {
                 aria-label="Vizualizare în timp real a traficului aerian pentru aeroportul Henri Coandă din București. Această hartă interactivă afișează zborurile active în zona aeroportului."
                 lang="ro">
             </iframe>
+            </div>
             <div className="w-full rounded-[7px] p-6 border border-gray-200 flex flex-col gap-4">
                 <h2 className="text-2xl text-gray-600">
                     GROUNDED PLANES
