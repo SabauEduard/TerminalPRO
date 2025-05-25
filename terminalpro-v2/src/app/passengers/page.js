@@ -45,8 +45,8 @@ export const users = [
         phone: "0722123456",
         email: "andrei.popescu@gmail.com",
         tickets: [
-            { ticket_id: "TKT78901", flight: "W43238", date: "2025-03-15", from: "OTP", to: "ZTH", seat: "25B", class: "Economy", gate: "102A" },
-            { ticket_id: "TKT78902", flight: "ROT3476", date: "2025-02-20", from: "OTP", to: "CDG", seat: "14C", class: "Business", gate: "37B" },
+            { ticket_id: "TKT78901", flight: "W43238", date: "2025-06-15", from: "OTP", to: "ZTH", seat: "25B", class: "Economy", gate: "102A" },
+            { ticket_id: "TKT78902", flight: "ROT3476", date: "2025-08-20", from: "OTP", to: "CDG", seat: "14C", class: "Business", gate: "37B" },
             { ticket_id: "TKT78903", flight: "KLM89P2", date: "2024-12-05", from: "OTP", to: "AMS", seat: "8A", class: "Economy", gate: "55A" }
         ]
     },
@@ -56,7 +56,7 @@ export const users = [
         phone: "0733456789",
         email: "elena.ionescu@yahoo.com",
         tickets: [
-            { ticket_id: "TKT79101", flight: "BA884", date: "2025-04-10", from: "OTP", to: "LHR", seat: "12D", class: "Economy", gate: "45C" },
+            { ticket_id: "TKT79101", flight: "BA884", date: "2025-08-10", from: "OTP", to: "LHR", seat: "12D", class: "Economy", gate: "45C" },
             { ticket_id: "TKT79102", flight: "LH1655", date: "2025-01-17", from: "OTP", to: "FRA", seat: "22F", class: "Economy", gate: "18A" }
         ]
     },
@@ -66,7 +66,7 @@ export const users = [
         phone: "0744987654",
         email: "mihai.georgescu@gmail.com",
         tickets: [
-            { ticket_id: "TKT80201", flight: "WZZ8KJ2", date: "2025-03-28", from: "OTP", to: "BCN", seat: "18B", class: "Economy", gate: "20B" },
+            { ticket_id: "TKT80201", flight: "WZZ8KJ2", date: "2025-12-28", from: "OTP", to: "BCN", seat: "18B", class: "Economy", gate: "20B" },
             { ticket_id: "TKT80202", flight: "AFR67L9", date: "2025-05-15", from: "OTP", to: "CDG", seat: "5A", class: "Business", gate: "12C" },
             { ticket_id: "TKT80203", flight: "DLH18F3", date: "2024-11-30", from: "OTP", to: "MUC", seat: "9E", class: "Economy", gate: "28A" }
         ]
@@ -533,6 +533,26 @@ export default function Passengers() {
         );
     }, [items.length, page, pages, hasSearchFilter]);
 
+    const getUpcomingFlight = (tickets) => {
+        if (!tickets || tickets.length === 0) return null;
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        const upcomingTickets = tickets.filter(ticket => {
+            const flightDate = new Date(ticket.date);
+            return flightDate >= today;
+        });
+
+        if (upcomingTickets.length === 0) return null;
+
+        upcomingTickets.sort((a, b) => {
+            return new Date(a.date) - new Date(b.date);
+        });
+
+        return upcomingTickets[0];
+    };
+
     return (
         <div className="min-h-screen">
             <h1 className="text-gray-600 text-3xl pb-8">PASSENGERS</h1>
@@ -565,6 +585,7 @@ export default function Passengers() {
                 <TableBody emptyContent={"No users found"} items={sortedItems}>
                     {(item) => (
                         <TableRow
+                            className="cursor-pointer hover:bg-zinc-100"
                             onClick={() => {
                                 setActiveUser(item);
                                 onOpen();
@@ -608,51 +629,71 @@ export default function Passengers() {
 
                                 <div className="mt-6">
                                     <h3 className="text-xl uppercase text-gray-600">Upcoming Flight</h3>
-                                    <div className="w-full h-[430px] flex items-center justify-center py-4">
-                                        <div className="bg-white w-[75%] h-full rounded-xl relative shadow-ticket-info">
-                                            <div className="absolute w-[50px] h-[50px] rounded-full bg-white bottom-[125px] left-[-25px] shadow-circle1"></div>
-                                            <div className="absolute w-[50px] h-[50px] rounded-full bg-white bottom-[125px] right-[-25px] shadow-circle2"></div>
-                                            <div className="absolute w-[50px] h-[50px] bg-white bottom-[125px] left-[-50px]"></div>
-                                            <div className="absolute w-[50px] h-[50px] bg-white bottom-[125px] right-[-50px]"></div>
-                                            <div className="absolute left-[25px] bottom-[150px] border-1 border-dashed w-dashed-line"></div>
-                                            <div className='h-[250px] w-full flex flex-col'>
-                                                <div className='p-6 justify-between flex'>
-                                                    <div className='flex pr-6 items-center gap-2'>
-                                                        <SeatIcon />
-                                                        <h3 className="text-2xl">25B</h3>
-                                                    </div>
-                                                    <div className='flex pr-6 items-center gap-2'>
-                                                        <h3 className="text-2xl">OTP</h3>
-                                                        <FlyingPlane width="1rem" height="1rem" />
-                                                        <h3 className="text-2xl">ZTH</h3>
-                                                    </div>
+                                    {activeUser && activeUser.tickets && (() => {
+                                        const upcomingFlight = getUpcomingFlight(activeUser.tickets);
+
+                                        if (!upcomingFlight) {
+                                            return (
+                                                <div className="mt-4 p-4 text-center">
+                                                    <p>No upcoming flights</p>
                                                 </div>
-                                                <div className='flex flex-col items-start px-12 w-full'>
-                                                    <div className="grid grid-cols-2 gap-x-12 gap-y-2 w-full max-w-md">
-                                                        <div>
-                                                            <div className="text-gray-600">Flight</div>
-                                                            <div className="font-medium">W43238</div>
+                                            );
+                                        }
+
+                                        return (
+                                            <div className="w-full h-[430px] flex items-center justify-center py-4">
+                                                <div className="bg-white w-[75%] h-full rounded-xl relative shadow-ticket-info">
+                                                    <div className="absolute w-[50px] h-[50px] rounded-full bg-white bottom-[125px] left-[-25px] shadow-circle1"></div>
+                                                    <div className="absolute w-[50px] h-[50px] rounded-full bg-white bottom-[125px] right-[-25px] shadow-circle2"></div>
+                                                    <div className="absolute w-[50px] h-[50px] bg-white bottom-[125px] left-[-50px]"></div>
+                                                    <div className="absolute w-[50px] h-[50px] bg-white bottom-[125px] right-[-50px]"></div>
+                                                    <div className="absolute left-[25px] bottom-[150px] border-1 border-dashed w-dashed-line"></div>
+                                                    <div className='h-[250px] w-full flex flex-col'>
+                                                        <div className='p-6 justify-between flex'>
+                                                            <div className='flex pr-6 items-center gap-2'>
+                                                                <SeatIcon />
+                                                                <h3 className="text-2xl">{upcomingFlight.seat}</h3>
+                                                            </div>
+                                                            <div className='flex pr-6 items-center gap-2'>
+                                                                <h3 className="text-2xl">{upcomingFlight.from}</h3>
+                                                                <FlyingPlane width="1rem" height="1rem" />
+                                                                <h3 className="text-2xl">{upcomingFlight.to}</h3>
+                                                            </div>
                                                         </div>
-                                                        <div>
-                                                            <div className="text-gray-600">Date</div>
-                                                            <div className="font-medium">15 Mar 2025</div>
+                                                        <div className='flex flex-col items-start px-12 w-full'>
+                                                            <div className="grid grid-cols-2 gap-x-12 gap-y-2 w-full max-w-md">
+                                                                <div>
+                                                                    <div className="text-gray-600">Flight</div>
+                                                                    <div className="font-medium">{upcomingFlight.flight}</div>
+                                                                </div>
+                                                                <div>
+                                                                    <div className="text-gray-600">Date</div>
+                                                                    <div className="font-medium">
+                                                                        {new Date(upcomingFlight.date).toLocaleDateString('ro-RO', {
+                                                                            day: 'numeric',
+                                                                            month: 'short',
+                                                                            year: 'numeric'
+                                                                        })}
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                    <div className="text-gray-600">Class</div>
+                                                                    <div className="font-medium">{upcomingFlight.class}</div>
+                                                                </div>
+                                                                <div>
+                                                                    <div className="text-gray-600">Gate</div>
+                                                                    <div className="font-medium">{upcomingFlight.gate}</div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div>
-                                                            <div className="text-gray-600">Class</div>
-                                                            <div className="font-medium">Economy</div>
-                                                        </div>
-                                                        <div>
-                                                            <div className="text-gray-600">Gate</div>
-                                                            <div className="font-medium">102A</div>
-                                                        </div>
+                                                    </div>
+                                                    <div className='w-full h-[150px] flex items-center justify-center'>
+                                                        <img src="/cod_bare.png" alt="Ticket" width={250} height={150} />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className='w-full h-[150px] flex items-center justify-center'>
-                                                <img src="/cod_bare.png" alt="Ticket" width={250} height={150} />
-                                            </div>
-                                        </div>
-                                    </div>
+                                        );
+                                    })()}
                                 </div>
 
                                 <div className="mt-6">
