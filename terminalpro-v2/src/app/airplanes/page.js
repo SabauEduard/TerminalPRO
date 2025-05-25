@@ -16,11 +16,22 @@ import {
     DropdownMenu,
     DropdownItem,
     Chip,
+    useDisclosure,
     User,
+    Modal,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
     Pagination,
     airplane,
+    Autocomplete,
+    AutocompleteItem,
+    Form
 } from "@heroui/react";
-import { useRouter } from "next/navigation";
+import airplanes_list from "../data/aircrafts.json";
+import airlines_list from "../data/airlines.json";
+
 
 export const columns = [
     { name: "REGISTRATION", uid: "registration" },
@@ -189,8 +200,6 @@ export default function App() {
     });
     const [page, setPage] = React.useState(1);
 
-    const router = useRouter();
-
     const hasSearchFilter = Boolean(filterValue);
 
     const headerColumns = React.useMemo(() => {
@@ -214,6 +223,8 @@ export default function App() {
     }, [airplanes, filterValue]);
 
     const pages = Math.ceil(filteredItems.length / rowsPerPage) || 1;
+
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     const items = React.useMemo(() => {
         const start = (page - 1) * rowsPerPage;
@@ -318,7 +329,7 @@ export default function App() {
                                 ))}
                             </DropdownMenu>
                         </Dropdown>
-                        <Button color="secondary" endContent={<PlusIcon />} onClick={() => router.push('/add_airplane')}>
+                        <Button color="secondary" endContent={<PlusIcon />} onPress={onOpen}>
                             Add New
                         </Button>
                     </div>
@@ -402,6 +413,77 @@ export default function App() {
                     )}
                 </TableBody>
             </Table>
+            <Modal isOpen={isOpen} backdrop="blur" size="3xl" placement="top-center" onOpenChange={onOpenChange}>
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader className="flex flex-col gap-1">
+                                <h1 className="text-gray-600 text-2xl font-medium pb-8">ADD AIRPLANE</h1>
+                            </ModalHeader>
+                            <ModalBody>
+                                <Form className="w-full flex flex-col gap-4">
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Autocomplete
+                                            isRequired
+                                            label="Model"
+                                            labelPlacement="outside"
+                                            placeholder="Select aircraft model"
+                                        >
+                                            {
+                                                airplanes_list.map((airplane) => (
+                                                    <AutocompleteItem key={airplane.value}>{airplane.value}</AutocompleteItem>
+                                                ))
+                                            }
+                                        </Autocomplete>
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Autocomplete
+                                            isRequired
+                                            label="Airline"
+                                            labelPlacement="outside"
+                                            placeholder="Select the operationg airline"
+                                        >
+                                            {
+                                                airlines_list.map((airline) => (
+                                                    <AutocompleteItem key={airline.id}>{airline.name}</AutocompleteItem>
+                                                ))
+                                            }
+                                        </Autocomplete>
+                                        <Input
+                                            isRequired
+                                            label="Registration"
+                                            labelPlacement="outside"
+                                            placeholder="Enter airpline's registration number"
+                                        />
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Input
+                                            isRequired
+                                            label="Call Sign"
+                                            labelPlacement="outside"
+                                            placeholder="Enter airpline's call sign"
+                                        />
+                                        <Input
+                                            isRequired
+                                            label="Capacity"
+                                            labelPlacement="outside"
+                                            placeholder="Enter airpline's capacity"
+                                        />
+                                    </div>
+                                </Form>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="danger" variant="flat" onPress={onClose}>
+                                    Close
+                                </Button>
+                                <Button color="primary" onPress={onClose}>
+                                    Sign in
+                                </Button>
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
         </div>
     );
 }
