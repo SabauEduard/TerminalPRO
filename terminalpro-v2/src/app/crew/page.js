@@ -532,7 +532,7 @@ export default function Crew() {
 
     return (
         <div>
-            <h1 className="text-gray-600 text-3xl pb-8">PASSENGERS</h1>
+            <h1 className="text-gray-600 text-3xl pb-8">CREW MEMBERS</h1>
             <Table
                 isHeaderSticky
                 aria-label="Table with registered passengers"
