@@ -18,6 +18,7 @@ import {
     Chip,
     User,
     Pagination,
+    user,
 } from "@heroui/react";
 
 export const columns = [
@@ -348,7 +349,9 @@ export default function Passengers() {
 
         if (hasSearchFilter) {
             filteredUsers = filteredUsers.filter((user) =>
-                user.name.toLowerCase().includes(filterValue.toLowerCase()),
+                user.name.toLowerCase().includes(filterValue.toLowerCase()) ||
+                user.phone.toLowerCase().includes(filterValue.toLowerCase()) ||
+                user.email.toLowerCase().includes(filterValue.toLocaleLowerCase())
             );
         }
         if (statusFilter !== "all" && Array.from(statusFilter).length !== statusOptions.length) {
@@ -447,8 +450,9 @@ export default function Passengers() {
                     <Input
                         isClearable
                         className="w-full sm:max-w-[44%]"
-                        placeholder="Search by name..."
+                        placeholder="Search by name, phone, email or ID..."
                         startContent={<SearchIcon />}
+                        radius='sm'
                         value={filterValue}
                         onClear={() => onClear()}
                         onValueChange={onSearchChange}
@@ -456,7 +460,7 @@ export default function Passengers() {
                     <div className="flex gap-3">
                         <Dropdown>
                             <DropdownTrigger className="hidden sm:flex">
-                                <Button endContent={<ChevronDownIcon className="text-small" />} variant="flat">
+                                <Button className='bg-tp-blue-light' radius="sm" endContent={<ChevronDownIcon className="text-small" />} variant="flat">
                                     Columns
                                 </Button>
                             </DropdownTrigger>
@@ -465,6 +469,7 @@ export default function Passengers() {
                                 aria-label="Table Columns"
                                 closeOnSelect={false}
                                 selectedKeys={visibleColumns}
+                                radius='sm'
                                 selectionMode="multiple"
                                 onSelectionChange={setVisibleColumns}
                             >
@@ -478,7 +483,7 @@ export default function Passengers() {
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Total {users.length} users</span>
+                    <span className="text-default-400 text-small">Total {users.length} passengers</span>
                     <label className="flex items-center text-default-400 text-small">
                         Rows per page:
                         <select
@@ -505,12 +510,7 @@ export default function Passengers() {
 
     const bottomContent = React.useMemo(() => {
         return (
-            <div className="py-2 px-2 flex justify-between items-center">
-                <span className="w-[30%] text-small text-default-400">
-                    {selectedKeys === "all"
-                        ? "All items selected"
-                        : `${selectedKeys.size} of ${filteredItems.length} selected`}
-                </span>
+            <div className="py-2 px-2 flex justify-center items-center">
                 <Pagination
                     isCompact
                     showControls
@@ -519,42 +519,34 @@ export default function Passengers() {
                     page={page}
                     total={pages}
                     onChange={setPage}
+                    radius="sm"
                 />
-                <div className="hidden sm:flex w-[30%] justify-end gap-2">
-                    <Button isDisabled={pages === 1} size="sm" variant="flat" onPress={onPreviousPage}>
-                        Previous
-                    </Button>
-                    <Button isDisabled={pages === 1} size="sm" variant="flat" onPress={onNextPage}>
-                        Next
-                    </Button>
-                </div>
             </div>
         );
-    }, [selectedKeys, items.length, page, pages, hasSearchFilter]);
+    }, [items.length, page, pages, hasSearchFilter]);
 
     return (
         <div className="min-h-screen">
-            <h1 className="text-black text-3xl font-medium pb-8">PASSENGERS</h1>
+            <h1 className="text-gray-600 text-3xl font-medium pb-8">PASSENGERS</h1>
             <Table
                 isHeaderSticky
                 aria-label="Table with registered passengers"
                 bottomContent={bottomContent}
+                radius="sm"
                 bottomContentPlacement="outside"
                 classNames={{
                     wrapper: "max-h-full",
                 }}
-                selectedKeys={selectedKeys}
-                selectionMode="multiple"
                 sortDescriptor={sortDescriptor}
                 topContent={topContent}
                 topContentPlacement="outside"
-                onSelectionChange={setSelectedKeys}
                 onSortChange={setSortDescriptor}
             >
-                <TableHeader columns={headerColumns}>
+                <TableHeader radius='sm' columns={headerColumns}>
                     {(column) => (
                         <TableColumn
                             key={column.uid}
+                            rad
                             align={column.uid === "actions" ? "center" : "start"}
                             allowsSorting={column.sortable}
                         >
