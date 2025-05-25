@@ -35,7 +35,6 @@ export const columns = [
     { name: "NAME", uid: "name", sortable: true },
     { name: "PHONE", uid: "phone" },
     { name: "EMAIL", uid: "email" },
-    { name: "ACTIONS", uid: "actions" }
 ];
 
 export const users = [
@@ -336,7 +335,7 @@ export function capitalize(s) {
     return s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : "";
 }
 
-const INITIAL_VISIBLE_COLUMNS = ["id", "name", "phone", "email", "actions"];
+const INITIAL_VISIBLE_COLUMNS = ["id", "name", "phone", "email"];
 
 export default function Passengers() {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -394,31 +393,7 @@ export default function Passengers() {
     const renderCell = React.useCallback((user, columnKey) => {
         const cellValue = user[columnKey];
 
-        switch (columnKey) {
-            case "name":
-                return (
-                    <h2>{user.name}</h2>
-                );
-            case "actions":
-                return (
-                    <div className="relative flex justify-end items-center gap-2">
-                        <Dropdown>
-                            <DropdownTrigger>
-                                <Button isIconOnly size="sm" variant="light">
-                                    <VerticalDotsIcon className="text-default-300" />
-                                </Button>
-                            </DropdownTrigger>
-                            <DropdownMenu>
-                                <DropdownItem key="view">View</DropdownItem>
-                                <DropdownItem key="edit">Edit</DropdownItem>
-                                <DropdownItem key="delete">Delete</DropdownItem>
-                            </DropdownMenu>
-                        </Dropdown>
-                    </div>
-                );
-            default:
-                return cellValue;
-        }
+        return cellValue;
     }, []);
 
     const onNextPage = React.useCallback(() => {
@@ -492,7 +467,7 @@ export default function Passengers() {
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
-                    <span className="text-default-400 text-small">Total {users.length} passengers</span>
+                    <span className="text-default-400 text-small">Total {filteredItems.length} passengers</span>
                     <label className="flex items-center text-default-400 text-small">
                         Rows per page:
                         <select
@@ -585,7 +560,7 @@ export default function Passengers() {
                 <TableBody emptyContent={"No users found"} items={sortedItems}>
                     {(item) => (
                         <TableRow
-                            className="cursor-pointer hover:bg-zinc-100"
+                            className="cursor-pointer hover:bg-zinc-100 h-14"
                             onClick={() => {
                                 setActiveUser(item);
                                 onOpen();
