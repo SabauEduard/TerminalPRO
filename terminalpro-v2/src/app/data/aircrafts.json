@@ -1,0 +1,2242 @@
+[
+    {
+        "value": "Aero Modifications AMI DC-3-65TP",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Aero Spacelines Mini Guppy Turbine",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Aeromarine 75",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "A\u00c3\u00a9rospatiale SN.601 Corvette",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "A\u00c3\u00a9rospatiale\/Aeritalia ATR-42",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "A\u00c3\u00a9rospatiale\/Aeritalia ATR-72",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A300",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A310",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A318",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A319",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A319\/320\/321",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A320",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A321",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A330",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A340",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Airbus A350 XWB",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Airbus A380",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Airbus Military A400M",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Airspeed AS.57 Ambassador",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Alenia C-27J",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Alenia G-222",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "all models BAe-125\/HS-125\/DH-125",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 10",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Antonov 12",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Antonov 124",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Antonov 140",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 148",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 178",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 2",
+        "type": "piston",
+        "engines": 1
+    },
+    {
+        "value": "Antonov 22",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Antonov 225",
+        "type": "jet",
+        "engines": 6
+    },
+    {
+        "value": "Antonov 24",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 26",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 28 \/ PZL M-28",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 30",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 32",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 38",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 70",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Antonov 72 \/ 74",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Antonov 8",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Armstrong Whitworth Argosy",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Armstrong Whitworth AW-650 Argosy",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Armstrong Whitworth AW.15 Atalanta",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Armstrong Whitworth AW.27 Ensign",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "ATECO Westwind II",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Avcen Jetpod",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Avia 14",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Aviation Traders ATL-98 Carvair",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Avro 642 Eighteen",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Avro 685 York",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Avro 688\/9 Tudor",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Avro 691 Lancastrian",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Avro Shackleton",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Baade 152",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "BAC One-Eleven",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "BAC\/A\u00c3\u00a9rospatiale Concorde",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "BAe-125-600, -700",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "BAe-125-800, Hawker 750, 800, 850",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Basler Turbo-67 (BT-67)",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Beechcraft (Super) King Air",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Beechcraft 100 King Air",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Beechcraft 1900",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Beechcraft 34 Twin Quad",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Beechcraft 99",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Beechcraft Beechjet 400",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Beechcraft Super King Air",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Beriev Be-200",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Beriev Be-30",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Blackburn Beverley",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Bl\u00c3\u00a9riot 155",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Bloch 220",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 314",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Boeing 377 Stratocruiser",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Boeing 707",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Boeing 717",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 720",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Boeing 727",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Boeing 737",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-100",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-200",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-300",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-400",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-500",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-600",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-700",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-8 MAX",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-800",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 737-900",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 747",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Boeing 757",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 767",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 777",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 787",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Boeing 80",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Boeing C-135",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Boeing C-97 Stratofreighter",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Boeing S.307 Stratoliner",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Bombardier BD-100 Challenger 300",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Bombardier BD-700 Global Express",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Bombardier CRJ100 \/ 200 \/ 440",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Bombardier CRJ1000",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Bombardier CRJ700",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Bombardier CRJ900",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Bombardier Cseries",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Bombardier\/Canadair Regional Jet series",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Breguet 1150 Atlantic",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Breguet 730",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Breguet Br.763 Provence",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Bristol 170",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Bristol 175 Britannia",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "British Aerospace ATP",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "British Aerospace BAe-146",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "British Aerospace Jetstream 31",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "British Aerospace Jetstream 41",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Britten-Norman BN-2 Islander",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Britten-Norman BN-2A Trislander",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Budd C-93 Conestoga",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Canadair Argonaut \/ North Star",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Canadair CL-215",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Canadair CL-415",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Canadair CL-44\/CC-106",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Canadair CL-600 Challenger",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Canadair CP-107 Argus",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "CANT Z.506",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Caproni Ca.133",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Caproni Ca.48",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Caproni Ca.60 Noviplano",
+        "type": "piston",
+        "engines": 8
+    },
+    {
+        "value": "CASA C-207 Azor",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "CASA C-295",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "CASA\/Nurtanio 212 Aviocar",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "CASA\/Nurtanio CN.235",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 208 Caravan",
+        "type": "turboprop",
+        "engines": 1
+    },
+    {
+        "value": "Cessna 500 Citation I",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 510 Citation Mustang",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 525 CitationJet",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 550 Citation Bravo",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 550 Citation II",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 560 Citation Excel",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 560 Citation V",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 650 Citation III",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 650 Citation VII",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 680 Citation Sovereign",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 680A Citation Latitude",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna 750 Citation X",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Cessna S550 Citation S\/II",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Chase YC-122 Avitruc",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Cirrus Vision SJ50",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "COMAC ARJ21",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Consolidated 16 Commodore",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Consolidated B-24 Liberator",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Consolidated C-87 Liberator Express",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Consolidated Liberator",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Consolidated PB4Y-2 Privateer",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Consolidated PBY-5A Catalina",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-240 \/ T-29 \/ C-131A",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-340",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-340\/440",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-440",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-580",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-600",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-640",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Convair CV-880",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Convair CV-990",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Curtiss C-46",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Curtiss Condor 18",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Curtiss T-32 Condor",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Dassault Falcon 10",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Dassault Falcon 20",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Dassault Falcon 2000",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Dassault Falcon 50",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Dassault Falcon 7X",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Dassault Falcon 900",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Dassault Mercure",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland Canada DHC-3 (Turbine)Otter",
+        "type": "piston",
+        "engines": 1
+    },
+    {
+        "value": "de Havilland Canada DHC-3 Otter",
+        "type": "piston",
+        "engines": 1
+    },
+    {
+        "value": "de Havilland Canada DHC-3 Turbine Otter",
+        "type": "turboprop",
+        "engines": 1
+    },
+    {
+        "value": "de Havilland Canada DHC-4 Caribou",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland Canada DHC-5 Buffalo",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland Canada DHC-6 Twin Otter",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland Canada DHC-7",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "de Havilland Canada DHC-8",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland Canada DHC-8-100",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland Canada DHC-8-300",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland Canada DHC-8-400",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "de Havilland DH-106 Comet",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "de Havilland DH-114 Heron",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "de Havilland DH.66 Hercules",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "de Havilland DH.86 Express",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "de Havilland DH.91 Albatross",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "de Havilland DH.95 Flamingo",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Dewoitine D.338",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Diamond D-Jet",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Dornier 228",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Dornier 328",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Dornier 328JET",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Dornier Do R Superwal",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Dornier Do-128-6 Turbo Skyservant",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Dornier Do-28 (Turbo) Skyservant series",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Dornier Do-28D Skyservant",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Dornier Seastar",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Douglas C-124 Globemaster",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Douglas C-133 Cargomaster",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Douglas C-74 Globemaster I",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Douglas DC-1",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Douglas DC-2",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Douglas DC-3",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Douglas DC-4",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Douglas DC-5",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Douglas DC-6",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Douglas DC-7",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Eclipse 500",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer EMB-110 Bandeirante",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Embraer EMB-120 Brasilia",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Embraer EMB-500 Phenom 100",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer EMB-505 Phenom 300",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer ERJ-135",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer ERJ-135\/140\/145",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer ERJ-140",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer ERJ-145",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer ERJ-170",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer ERJ-170\/190",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer ERJ-190",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer KC-390",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Embraer Legacy",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Epic Elite",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Epic Victory",
+        "type": "jet",
+        "engines": 1
+    },
+    {
+        "value": "Excel-Jet Sport-Jet",
+        "type": "jet",
+        "engines": 1
+    },
+    {
+        "value": "Fairchild C-119 Flying Boxcar",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Fairchild C-123 Provider",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Fairchild C-82 Packet",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Fairchild F-27",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Fairchild F-27\/FH227",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Fairchild FH-227",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Farman F.180",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Farman F.220",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Farman F.60 Goliath",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Felixstowe Fury",
+        "type": "piston",
+        "engines": 5
+    },
+    {
+        "value": "Fiat G.12",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Fiat G.18",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Fiat G.212",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "FMA IA 50 Guaran\u00c3\u00ad II",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Focke-Wulf FW.200 Condor",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Fokker 100",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Fokker 50",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Fokker 70",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Fokker F-27 Friendship",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Fokker F-28 Fellowship",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Fokker F.32",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Fokker F.IX",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Fokker F.VIII",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Fokker F.XII",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Fokker F.XXII",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Fokker F.XXXVI",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Ford AT-5 Tri-Motor",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "GAF Nomad",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Grob SPn",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Grumman C-2 Greyhound",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Grumman G-111 Albatross",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Grumman G-159 Gulfstream I",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Grumman G-73 (Turbo) Mallard",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Grumman G-73 Mallard",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Grumman G-73T Turbo Mallard",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Gulfstream Aerospace G-1159 Gulfstream",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Gulfstream G200",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Gulfstream G280",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Gulfstream G650",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Handley Page Hastings",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Handley Page HP-137 Jetstream",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Handley Page HP.42",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Handley Page HP.68\/81\/82 Hermes",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Handley Page HPR.7 Herald",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Handley Page Type O",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Handley Page Type W",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Hawker 1000",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Hawker 4000 Horizon",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Hawker Siddeley HS-121 Trident",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Hawker Siddeley HS-125 Srs. 1, 2, 3, 400",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Hawker Siddeley HS-748",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Hawker Siddeley HS-801 Nimrod",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Hindustan Aeronautics Ltd. HAL-748",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Honda HA-420 HondaJet",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Howard 250",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Howard 350",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Howard 500",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Hurel-Dubois HD.31",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "IAI 1124 Westwind",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "IAI 1125 Astra",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "IAI Arava",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Ilyushin 114",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Ilyushin 12",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Ilyushin 14",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Ilyushin 18",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Ilyushin 38",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Ilyushin 62",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Ilyushin 76",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Ilyushin 86",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Ilyushin 96",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Junkers F.\/G.24 series",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Junkers F.24",
+        "type": "piston",
+        "engines": 1
+    },
+    {
+        "value": "Junkers G.24",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Junkers G.31",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Junkers G.38",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Junkers Ju-52\/3m",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Junkers Ju-90",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Kalinin K-7",
+        "type": "piston",
+        "engines": 7
+    },
+    {
+        "value": "Kawasaki C-1",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Kawasaki C-2",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Kawasaki Ki-56",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Kawasaki P-1",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Lat\u00c3\u00a9co\u00c3\u00a8re 631",
+        "type": "piston",
+        "engines": 6
+    },
+    {
+        "value": "Learjet 23",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 24",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 25",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 28 \/ 29",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 31",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 35 \/ 36",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 45",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 55",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Learjet 60",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Let L-410",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Let L-610",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Lior\u00c3\u00a9 et Olivier H.242",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Lisunov Li-2",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Lockheed 18 Lodestar",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Lockheed C-130 & L-100 Hercules",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed C-130 Hercules",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed C-141 Starlifter",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed C-5 Galaxy",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed Hudson",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Lockheed L- 049\/149 Constellation",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed L- 649\/749 Constellation",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed L-100 Hercules",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed L-1011 TriStar",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Lockheed L-1049 Super Constellation",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed L-1329 Jetstar",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed L-14 Super Electra",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Lockheed L-1649 Starliner",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed L-188 Electra",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed P-2 Neptune",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Lockheed P-3 Orion",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Lockheed Ventura",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Macchi M.C.100",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Macchi M.C.94",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Martin 2-0-2",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Martin 4-0-4",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Martin M-130",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Martin Mars",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Martin P5M Marlin",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Martin PBM-5 Mariner",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "MBB HFB-320 Hansa Jet",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas C-17 Globemaster III",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "McDonnell Douglas DC-10",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "McDonnell Douglas DC-8",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "McDonnell Douglas DC-9-10\/15",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas DC-9-20",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas DC-9-30",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas DC-9-40",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas DC-9-50",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas DC-9\/MD-80s\/MD90\/B717",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas MD-11",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "McDonnell Douglas MD-80",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "McDonnell Douglas MD-90",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Miles Marathon",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Mitsubishi MRJ",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Mitsubishi Mu-300 Diamond 1",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Morane Saulnier MS.760 Paris",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "NAL Saras",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "NAMC YS-11",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Nord 2501 Noratlas",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Nord 262",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Northrop YC-125 Raider",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Piaggio PD.808",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Pilatus PC-24",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Piper PA-47 PiperJet",
+        "type": "jet",
+        "engines": 1
+    },
+    {
+        "value": "Potez 62",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Potez 840",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Potez-CAMS 161",
+        "type": "piston",
+        "engines": 6
+    },
+    {
+        "value": "PZL MD-12",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "PZL-Mielec M28",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Raytheon Premier 1",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Reims-Cessna F406 Caravan II",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Rockwell 1121 Jet Commander",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Rockwell Sabreliner",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Rohrbach Ro X Romar",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "SAAB 2000",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "SAAB 340",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "SAAB Scandia",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Saunders ST-27",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Savoia-Marchetti S.66",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Savoia-Marchetti S.73",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Savoia-Marchetti S.74",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Savoia-Marchetti SM.75",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Savoia-Marchetti SM.95",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Scottish Aviation Twin Pioneer",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Shijiazhuang Y-5",
+        "type": "piston",
+        "engines": 1
+    },
+    {
+        "value": "Shin Meiwa PS-1",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "ShinMaywa US-2",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Short L.17 Scylla",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Short S.17 Kent",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Short S.23 Empire",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Short S.25 Sandringham\/Sunderland",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Short S.26 G Class",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Short S.45 Solent",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Short S.8 Calcutta",
+        "type": "piston",
+        "engines": 3
+    },
+    {
+        "value": "Shorts 330",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Shorts 360",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Shorts SC.7 Skyvan",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Sikorsky S.42",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "Sikorsky S.43",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Sikorsky VS-44",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "SNCAC NC.211 Cormoran",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "SNCASE (Lior\u00c3\u00a9 et Olivier) H.246",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "SNCASE SE.161 Languedoc",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "SNCASE SE.200",
+        "type": "piston",
+        "engines": 6
+    },
+    {
+        "value": "SNCASE SE.2010 Armagnac",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "SNCASO SO.30",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Spectrum Aeronautical Spectrum 33",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Sud Aviation SE-210 Caravelle",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Sukhoi Su-80",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Sukhoi Superjet 100",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Swearingen Merlin IV",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Swearingen Metro",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Swearingen Metro \/ Merlin IV",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "SyberJet SJ30-2",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Transall C-160",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Tupolev 104",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Tupolev 114",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Tupolev 124",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Tupolev 134",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Tupolev 144",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Tupolev 154",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Tupolev 204",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Tupolev 334",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Tupolev ANT-20",
+        "type": "piston",
+        "engines": 8
+    },
+    {
+        "value": "Tupolev G-2",
+        "type": "piston",
+        "engines": 4
+    },
+    {
+        "value": "VFW-614",
+        "type": "jet",
+        "engines": 2
+    },
+    {
+        "value": "Vickers Valetta",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Vickers Vanguard",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Vickers Varsity",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Vickers VC10",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Vickers Viking",
+        "type": "piston",
+        "engines": 2
+    },
+    {
+        "value": "Vickers Viscount",
+        "type": "turboprop",
+        "engines": 4
+    },
+    {
+        "value": "Volpar Turboliner",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Xian Y-20",
+        "type": "jet",
+        "engines": 4
+    },
+    {
+        "value": "Xian Yunshuji Y-7",
+        "type": "turboprop",
+        "engines": 2
+    },
+    {
+        "value": "Yakovlev 40",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Yakovlev 42",
+        "type": "jet",
+        "engines": 3
+    },
+    {
+        "value": "Yunshuji Y-12",
+        "type": "turboprop",
+        "engines": 2
+    }
+]
