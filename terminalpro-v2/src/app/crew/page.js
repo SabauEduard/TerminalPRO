@@ -562,7 +562,7 @@ export default function Crew() {
                 <TableBody emptyContent={"No users found"} items={sortedItems}>
                     {(item) => (
                         <TableRow
-                            className="cursor-pointer hover:bg-zinc-100"
+                            className="cursor-pointer hover:bg-zinc-100 h-14"
                             onClick={() => {
                                 setActiveUser(item);
                                 onOpen();

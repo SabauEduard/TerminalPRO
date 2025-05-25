@@ -358,7 +358,7 @@ export default function Home() {
                     </TableHeader>
                     <TableBody emptyContent={"No planes on the ground"} items={sortedItems}>
                         {(item) => (
-                            <TableRow key={item.id}>
+                            <TableRow key={item.id} className="h-14">
                                 {(columnKey) => <TableCell>{renderCell(item, columnKey)}</TableCell>}
                             </TableRow>
                         )}
