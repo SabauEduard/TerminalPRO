@@ -15,16 +15,30 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownItem,
+    DropdownSection,
+
     Pagination,
     useDisclosure,
     Drawer,
     DrawerContent,
     DrawerHeader,
-    DrawerBody
+    DrawerBody,
+    Modal,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    Form,
+    Autocomplete,
+    AutocompleteItem
 } from "@heroui/react";
 
 import SearchIcon from "../icons/search";
 import ChevronDownIcon from "../icons/chevronDown";
+import PlusIcon from "../icons/plus";
+import airplanes_list from "../data/aircrafts.json";
+import airlines_list from "../data/airlines.json";
+import { on } from "events";
 
 export const columns = [
     { name: "Duration", uid: "duration", sortable: true },
@@ -371,6 +385,7 @@ const INITIAL_VISIBLE_COLUMNS = ["duration", "airline", "aircraft", "flight_numb
 
 export default function Flights() {
     const { isOpen, onOpen, onOpenChange } = useDisclosure();
+    const { isOpen: isOpenModal, onOpen: onOpenModal, onOpenChange: onOpenChangeModal } = useDisclosure();
     const [activeFlight, setActiveFlight] = React.useState(null);
     const [filterValue, setFilterValue] = React.useState("");
     const [visibleColumns, setVisibleColumns] = React.useState(new Set(INITIAL_VISIBLE_COLUMNS));
@@ -523,6 +538,9 @@ export default function Flights() {
                                 ))}
                             </DropdownMenu>
                         </Dropdown>
+                        <Button color="secondary" endContent={<PlusIcon />} onPress={onOpenModal}>
+                            Add New
+                        </Button>
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -578,6 +596,17 @@ export default function Flights() {
 
         return `${hours}h ${minutes}m`;
     };
+
+    const [captainSearchQuery, setCaptainSearchQuery] = React.useState("");
+    const [firstOfficerSearchQuery, setFirstOfficerSearchQuery] = React.useState("");
+    const [cabinChiefSearchQuery, setCabinChiefSearchQuery] = React.useState("");
+    const [attendantSearchQuery, setAttendantSearchQuery] = React.useState("");
+
+    const [selectedCaptains, setSelectedCaptains] = React.useState(new Set([]));
+    const [selectedFirstOfficers, setSelectedFirstOfficers] = React.useState(new Set([]));
+    const [selectedCabinChiefs, setSelectedCabinChiefs] = React.useState(new Set([]));
+    const [selectedAttendants, setSelectedAttendants] = React.useState(new Set([]));
+
 
     return (
         <div>
@@ -707,6 +736,295 @@ export default function Flights() {
                     )}
                 </DrawerContent>
             </Drawer>
+            <Modal isOpen={isOpenModal} backdrop="blur" size="3xl" placement="top-center" onOpenChange={onOpenChangeModal}>
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader className="flex flex-col gap-1">
+                                <h1 className="text-gray-600 text-2xl font-medium pb-8">ADD FLIGHT</h1>
+                            </ModalHeader>
+                            <ModalBody>
+                                <Form className="w-full flex flex-col gap-4"
+                                    onReset={() => setAction("reset")}
+                                    onSubmit={(e) => {
+                                        e.preventDefault();
+                                        let data = Object.fromEntries(new FormData(e.currentTarget));
+                                        console.log(JSON.stringify(data));
+                                    }}
+                                >
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Input
+                                            isRequired
+                                            name="flight_number"
+                                            label="Flight Number"
+                                            labelPlacement="outside"
+                                            placeholder="Enter flight number (e.g. RO302)"
+                                        />
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Autocomplete
+                                            isRequired
+                                            label="Aircraft"
+                                            name="aircraft"
+                                            labelPlacement="outside"
+                                            placeholder="Select aircraft model"
+                                        >
+                                            {
+                                                airplanes_list.map((airplane) => (
+                                                    <AutocompleteItem key={airplane.value}>{airplane.value}</AutocompleteItem>
+                                                ))
+                                            }
+                                        </Autocomplete>
+                                        <Autocomplete
+                                            isRequired
+                                            label="Airline"
+                                            name="airline"
+                                            labelPlacement="outside"
+                                            placeholder="Select airline"
+                                        >
+                                            {
+                                                airlines_list.map((airline) => (
+                                                    <AutocompleteItem key={airline.id}>{airline.name}</AutocompleteItem>
+                                                ))
+                                            }
+                                        </Autocomplete>
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Input
+                                            isRequired
+                                            name="origin"
+                                            label="Origin"
+                                            labelPlacement="outside"
+                                            placeholder="Enter origin airport code (e.g. OTP)"
+                                        />
+                                        <Input
+                                            isRequired
+                                            name="destination"
+                                            label="Destination"
+                                            labelPlacement="outside"
+                                            placeholder="Enter destination airport code (e.g. LHR)"
+                                        />
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Input
+                                            isRequired
+                                            name="departure_gate"
+                                            label="Departure Gate"
+                                            labelPlacement="outside"
+                                            placeholder="Enter departure gate (e.g. 12A)"
+                                        />
+                                        <Input
+                                            isRequired
+                                            name="arrival_gate"
+                                            label="Arrival Gate"
+                                            labelPlacement="outside"
+                                            placeholder="Enter arrival gate (e.g. 43B)"
+                                        />
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Input
+                                            isRequired
+                                            name="departure_time"
+                                            label="Departure Time"
+                                            labelPlacement="outside"
+                                            placeholder="Enter departure time"
+                                            type="datetime-local"
+                                        />
+                                        <Input
+                                            isRequired
+                                            name="arrival_time"
+                                            label="Arrival Time"
+                                            labelPlacement="outside"
+                                            placeholder="Enter arrival time"
+                                            type="datetime-local"
+                                        />
+                                    </div>
+                                    <div className="w-full">
+                                        <h3 className="text-lg font-medium mb-2">Crew Members<a className="text-red-600">*</a></h3>
+                                        <div className="w-full flex gap-4 flex-row mb-4">
+                                            {/* Căpitani */}
+                                            <Dropdown className="w-full">
+                                                <DropdownTrigger>
+                                                    <Button
+                                                        variant="flat"
+                                                        className="w-full justify-between"
+                                                        radius="sm"
+                                                        endContent={<ChevronDownIcon className="text-small" />}
+                                                    >
+                                                        {selectedCaptains.size > 0
+                                                            ? `${selectedCaptains.size} căpitani selectați`
+                                                            : "Selectează căpitani"}
+                                                    </Button>
+                                                </DropdownTrigger>
+                                                <DropdownMenu
+                                                    aria-label="Selectare căpitani"
+                                                    variant="flat"
+                                                    closeOnSelect={false}
+                                                    disallowEmptySelection
+                                                    selectionMode="multiple"
+                                                    selectedKeys={selectedCaptains}
+                                                    onSelectionChange={setSelectedCaptains}
+                                                    className="w-full min-w-[240px]"
+                                                    radius="sm"
+                                                >
+                                                    {[
+                                                        { id: "1", name: "Alexandru Munteanu" },
+                                                        { id: "2", name: "Victor Stanescu" },
+                                                        { id: "3", name: "James Williams" },
+                                                        { id: "4", name: "Liviu Mihăilescu" }
+                                                    ].map((person) => (
+                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
+                                                            <div className="flex items-center">
+                                                                <span className="text-small">{person.name}</span>
+                                                            </div>
+                                                        </DropdownItem>
+                                                    ))}
+                                                </DropdownMenu>
+                                            </Dropdown>
+
+                                            {/* Ofițeri de zbor */}
+                                            <Dropdown className="w-full">
+                                                <DropdownTrigger>
+                                                    <Button
+                                                        variant="flat"
+                                                        className="w-full justify-between"
+                                                        radius="sm"
+                                                        endContent={<ChevronDownIcon className="text-small" />}
+                                                    >
+                                                        {selectedFirstOfficers.size > 0
+                                                            ? `${selectedFirstOfficers.size} ofițeri selectați`
+                                                            : "Selectează ofițeri"}
+                                                    </Button>
+                                                </DropdownTrigger>
+                                                <DropdownMenu
+                                                    aria-label="Selectare ofițeri"
+                                                    variant="flat"
+                                                    closeOnSelect={false}
+                                                    disallowEmptySelection
+                                                    selectionMode="multiple"
+                                                    selectedKeys={selectedFirstOfficers}
+                                                    onSelectionChange={setSelectedFirstOfficers}
+                                                    className="w-full min-w-[240px]"
+                                                    radius="sm"
+                                                >
+                                                    {[
+                                                        { id: "1", name: "Elena Popescu" },
+                                                        { id: "2", name: "Cristina Barbu" },
+                                                        { id: "3", name: "Sarah Mitchell" },
+                                                        { id: "4", name: "Teodora Ionescu" }
+                                                    ].map((person) => (
+                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
+                                                            <div className="flex items-center">
+                                                                <span className="text-small">{person.name}</span>
+                                                            </div>
+                                                        </DropdownItem>
+                                                    ))}
+                                                </DropdownMenu>
+                                            </Dropdown>
+                                        </div>
+
+                                        <div className="w-full flex gap-4 flex-row">
+                                            {/* Șefi de cabină */}
+                                            <Dropdown className="w-full">
+                                                <DropdownTrigger>
+                                                    <Button
+                                                        variant="flat"
+                                                        className="w-full justify-between"
+                                                        radius="sm"
+                                                        endContent={<ChevronDownIcon className="text-small" />}
+                                                    >
+                                                        {selectedCabinChiefs.size > 0
+                                                            ? `${selectedCabinChiefs.size} șefi de cabină selectați`
+                                                            : "Selectează șefi de cabină"}
+                                                    </Button>
+                                                </DropdownTrigger>
+                                                <DropdownMenu
+                                                    aria-label="Selectare șefi de cabină"
+                                                    variant="flat"
+                                                    closeOnSelect={false}
+                                                    disallowEmptySelection
+                                                    selectionMode="multiple"
+                                                    selectedKeys={selectedCabinChiefs}
+                                                    onSelectionChange={setSelectedCabinChiefs}
+                                                    className="w-full min-w-[240px]"
+                                                    radius="sm"
+                                                >
+                                                    {[
+                                                        { id: "1", name: "Maria Ionescu" },
+                                                        { id: "2", name: "Adrian Manole" },
+                                                        { id: "3", name: "Robert Taylor" },
+                                                        { id: "4", name: "Madalina Bucur" }
+                                                    ].map((person) => (
+                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
+                                                            <div className="flex items-center">
+                                                                <span className="text-small">{person.name}</span>
+                                                            </div>
+                                                        </DropdownItem>
+                                                    ))}
+                                                </DropdownMenu>
+                                            </Dropdown>
+
+                                            {/* Însoțitori de zbor */}
+                                            <Dropdown className="w-full">
+                                                <DropdownTrigger>
+                                                    <Button
+                                                        variant="flat"
+                                                        className="w-full justify-between"
+                                                        radius="sm"
+                                                        endContent={<ChevronDownIcon className="text-small" />}
+                                                    >
+                                                        {selectedAttendants.size > 0
+                                                            ? `${selectedAttendants.size} însoțitori selectați`
+                                                            : "Selectează însoțitori"}
+                                                    </Button>
+                                                </DropdownTrigger>
+                                                <DropdownMenu
+                                                    aria-label="Selectare însoțitori"
+                                                    variant="flat"
+                                                    closeOnSelect={false}
+                                                    disallowEmptySelection
+                                                    selectionMode="multiple"
+                                                    selectedKeys={selectedAttendants}
+                                                    onSelectionChange={setSelectedAttendants}
+                                                    className="w-full min-w-[240px]"
+                                                    radius="sm"
+                                                >
+                                                    {[
+                                                        { id: "1", name: "Andrei Dima" },
+                                                        { id: "2", name: "Ioana Popa" },
+                                                        { id: "3", name: "Sorina Dumitrescu" },
+                                                        { id: "4", name: "Diana Vasilescu" },
+                                                        { id: "5", name: "Gabriela Pană" },
+                                                        { id: "6", name: "Alexandra Dragomir" },
+                                                        { id: "7", name: "Razvan Stancu" },
+                                                        { id: "8", name: "Andreea Popa" }
+                                                    ].map((person) => (
+                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
+                                                            <div className="flex items-center">
+                                                                <span className="text-small">{person.name}</span>
+                                                            </div>
+                                                        </DropdownItem>
+                                                    ))}
+                                                </DropdownMenu>
+                                            </Dropdown>
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-end w-full gap-4">
+                                        <Button color="default" type="reset" variant="flat">
+                                            Reset
+                                        </Button>
+                                        <Button type="submit" color="secondary">
+                                            Add Flight
+                                        </Button>
+                                    </div>
+                                </Form>
+                            </ModalBody>
+                            <ModalFooter>
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
         </div>
     );
 }
