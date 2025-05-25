@@ -18,6 +18,7 @@ import {
     Chip,
     User,
     Pagination,
+    user,
 } from "@heroui/react";
 
 export const columns = [
@@ -348,7 +349,9 @@ export default function Passengers() {
 
         if (hasSearchFilter) {
             filteredUsers = filteredUsers.filter((user) =>
-                user.name.toLowerCase().includes(filterValue.toLowerCase()),
+                user.name.toLowerCase().includes(filterValue.toLowerCase()) ||
+                user.phone.toLowerCase().includes(filterValue.toLowerCase()) ||
+                user.email.toLowerCase().includes(filterValue.toLocaleLowerCase())
             );
         }
         if (statusFilter !== "all" && Array.from(statusFilter).length !== statusOptions.length) {
@@ -447,7 +450,7 @@ export default function Passengers() {
                     <Input
                         isClearable
                         className="w-full sm:max-w-[44%]"
-                        placeholder="Search by name..."
+                        placeholder="Search by name, phone, email or ID..."
                         startContent={<SearchIcon />}
                         radius='sm'
                         value={filterValue}
