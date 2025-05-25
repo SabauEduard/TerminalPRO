@@ -34,7 +34,7 @@ export default function PageFrame({ children }) {
                         </Dropdown>
                     </div>
                 </div>
-                <div className="w-full border-t-1 border-l-1 border-tp-gray-light p-7 rounded-tl-[35px]">
+                <div className="w-full border-t-1 border-l-1 border-tp-gray-light p-7 rounded-tl-[35px] min-h-embeded-page">
                     {children}
                 </div>
             </div>

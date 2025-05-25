@@ -19,6 +19,7 @@
   --shadow-circle2: inset 4px 0px 4px rgba(0, 0, 0, 0.09);
   --shadow-ticket-info: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
   --width-dashed-line: calc(100% - 50px);
+  --height-embeded-page: calc(100vh - 80px);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
