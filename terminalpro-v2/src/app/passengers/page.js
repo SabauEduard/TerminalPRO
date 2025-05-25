@@ -554,7 +554,7 @@ export default function Passengers() {
     };
 
     return (
-        <div className="min-h-screen">
+        <div>
             <h1 className="text-gray-600 text-3xl pb-8">PASSENGERS</h1>
             <Table
                 isHeaderSticky
@@ -669,11 +669,13 @@ export default function Passengers() {
                                                                 <div>
                                                                     <div className="text-gray-600">Date</div>
                                                                     <div className="font-medium">
-                                                                        {new Date(upcomingFlight.date).toLocaleDateString('ro-RO', {
-                                                                            day: 'numeric',
-                                                                            month: 'short',
-                                                                            year: 'numeric'
-                                                                        })}
+                                                                        {(() => {
+                                                                            const date = new Date(upcomingFlight.date);
+                                                                            const day = date.getDate();
+                                                                            const month = ['Ian', 'Feb', 'Mar', 'Apr', 'Mai', 'Iun', 'Iul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][date.getMonth()];
+                                                                            const year = date.getFullYear();
+                                                                            return `${day} ${month} ${year}`;
+                                                                        })()}
                                                                     </div>
                                                                 </div>
                                                                 <div>
