@@ -513,7 +513,7 @@ export default function Crew() {
         filterValue,
         visibleColumns,
         onRowsPerPageChange,
-        users.length,
+        userList.length,
         onSearchChange,
         hasSearchFilter,
     ]);

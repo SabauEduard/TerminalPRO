@@ -32,7 +32,6 @@ import {
 import airplanes_list from "../data/aircrafts.json";
 import airlines_list from "../data/airlines.json";
 
-
 export const columns = [
     { name: "REGISTRATION", uid: "registration" },
     { name: "AIRLINE", uid: "airline", sortable: true },
@@ -202,6 +201,7 @@ export default function App() {
 
     const hasSearchFilter = Boolean(filterValue);
     const [action, setAction] = React.useState(null);
+    const [airplanesList, setAirplanesList] = React.useState(airplanes);
 
     const headerColumns = React.useMemo(() => {
         if (visibleColumns === "all") return columns;
@@ -210,7 +210,7 @@ export default function App() {
     }, [visibleColumns]);
 
     const filteredItems = React.useMemo(() => {
-        let filteredAirplanes = [...airplanes];
+        let filteredAirplanes = [...airplanesList];
 
         if (hasSearchFilter) {
             filteredAirplanes = filteredAirplanes.filter((airplane) =>
@@ -223,7 +223,7 @@ export default function App() {
         }
 
         return filteredAirplanes;
-    }, [airplanes, filterValue]);
+    }, [airplanesList, filterValue]);
 
     const pages = Math.ceil(filteredItems.length / rowsPerPage) || 1;
 
@@ -357,7 +357,7 @@ export default function App() {
         filterValue,
         visibleColumns,
         onRowsPerPageChange,
-        airplanes.length,
+        airplanesList.length,
         onSearchChange,
         hasSearchFilter,
     ]);
@@ -429,8 +429,14 @@ export default function App() {
                                     onSubmit={(e) => {
                                         e.preventDefault();
                                         let data = Object.fromEntries(new FormData(e.currentTarget));
-
-                                        console.log(JSON.stringify(data));
+                                        data = {
+                                            ...data,
+                                            capacity: Number(data.capacity),
+                                            registration: data.registration.toUpperCase(),
+                                            callsign: data.callsign.toUpperCase(),
+                                        };
+                                        setAirplanesList((prev) => [...prev, data]);
+                                        onClose();
                                     }}
                                 >
                                     <div className="w-full flex gap-4 flex-row">
