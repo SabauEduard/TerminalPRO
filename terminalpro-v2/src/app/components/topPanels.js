@@ -5,6 +5,17 @@ import PinIcon from "../icons/pin";
 import Card from "./card";
 
 export default function TopPanels() {
+    const getCurrentDate = () => {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0'); // Luna începe de la 0
+        const day = String(today.getDate()).padStart(2, '0');
+
+        return `${year}/${month}/${day}`;
+    };
+
+    const currentDate = getCurrentDate();
+
     return (
         <div className="flex flex-col gap-4 w-full pb-3 bg-white">
             <div className="flex items-center space-x-4">
@@ -16,7 +27,7 @@ export default function TopPanels() {
             <div className="flex items-center space-x-4 h-48">
                 <div className="w-full h-full rounded-lg p-6 flex flex-col items-center justify-center gap-4 border border-gray-200">
                     <div className="w-full flex justify-between items-center text-gray-700">
-                        <div>2025/03/25</div>
+                        <div>{currentDate}</div>
                         <div>7:30PM</div>
                     </div>
                     <div className="flex flex-col items-center">
@@ -57,7 +68,7 @@ export default function TopPanels() {
 
                 <div className="w-full h-full rounded-lg p-6 flex flex-col items-center justify-center gap-4 border border-gray-200">
                     <div className="w-full flex justify-between items-center text-gray-700">
-                        <div>2025/03/25</div>
+                        <div>{currentDate}</div>
                         <div>6:42PM</div>
                     </div>
                     <div className="flex flex-col items-center">
