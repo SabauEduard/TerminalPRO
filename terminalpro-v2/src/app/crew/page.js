@@ -1,6 +1,6 @@
 'use client';
 
-import React from "react";
+import React, { useEffect } from "react";
 import "../globals.css";
 import {
     Table,
@@ -16,6 +16,14 @@ import {
     DropdownMenu,
     DropdownItem,
     Pagination,
+    Modal,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    Form,
+    Autocomplete,
+    AutocompleteItem,
     useDisclosure,
     Drawer,
     DrawerContent,
@@ -26,9 +34,8 @@ import {
 import SearchIcon from "../icons/search";
 import VerticalDotsIcon from "../icons/verticalDots";
 import ChevronDownIcon from "../icons/chevronDown";
-import AirplaneIcon from "../icons/airplane";
-import SeatIcon from "../icons/seat";
-import FlyingPlane from "../icons/flyingPlane";
+import airlines_list from "../data/airlines.json";
+import { on } from "events";
 
 export const columns = [
     { name: "ID", uid: "id", sortable: true },
@@ -304,7 +311,31 @@ export const users = [
     }
 ];
 
-
+export const PlusIcon = ({ size = 24, width, height, ...props }) => {
+    return (
+        <svg
+            aria-hidden="true"
+            fill="none"
+            focusable="false"
+            height={size || height}
+            role="presentation"
+            viewBox="0 0 24 24"
+            width={size || width}
+            {...props}
+        >
+            <g
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+            >
+                <path d="M6 12h12" />
+                <path d="M12 18V6" />
+            </g>
+        </svg>
+    );
+};
 
 export function capitalize(s) {
     return s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : "";
@@ -318,6 +349,9 @@ export default function Crew() {
     const [filterValue, setFilterValue] = React.useState("");
     const [visibleColumns, setVisibleColumns] = React.useState(new Set(INITIAL_VISIBLE_COLUMNS));
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const { isOpen: isOpenModal, onOpen: onOpenModal, onOpenChange: onOpenChangeModal } = useDisclosure();
+    const [userList, setUserList] = React.useState(users);
+
     const [sortDescriptor, setSortDescriptor] = React.useState({
         column: "name",
         direction: "ascending",
@@ -333,7 +367,7 @@ export default function Crew() {
     }, [visibleColumns]);
 
     const filteredItems = React.useMemo(() => {
-        let filteredUsers = [...users];
+        let filteredUsers = [...userList];
 
         if (hasSearchFilter) {
             filteredUsers = filteredUsers.filter((user) =>
@@ -347,7 +381,7 @@ export default function Crew() {
         }
 
         return filteredUsers;
-    }, [users, filterValue]);
+    }, [userList, filterValue]);
 
     const pages = Math.ceil(filteredItems.length / rowsPerPage) || 1;
 
@@ -397,18 +431,6 @@ export default function Crew() {
                 return cellValue;
         }
     }, []);
-
-    const onNextPage = React.useCallback(() => {
-        if (page < pages) {
-            setPage(page + 1);
-        }
-    }, [page, pages]);
-
-    const onPreviousPage = React.useCallback(() => {
-        if (page > 1) {
-            setPage(page - 1);
-        }
-    }, [page]);
 
     const onRowsPerPageChange = React.useCallback((e) => {
         setRowsPerPage(Number(e.target.value));
@@ -466,6 +488,9 @@ export default function Crew() {
                                 ))}
                             </DropdownMenu>
                         </Dropdown>
+                        <Button color="secondary" endContent={<PlusIcon />} onPress={onOpenModal}>
+                            Add New
+                        </Button>
                     </div>
                 </div>
                 <div className="flex justify-between items-center">
@@ -510,25 +535,8 @@ export default function Crew() {
         );
     }, [items.length, page, pages, hasSearchFilter]);
 
-    const getUpcomingFlight = (tickets) => {
-        if (!tickets || tickets.length === 0) return null;
-
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        const upcomingTickets = tickets.filter(ticket => {
-            const flightDate = new Date(ticket.date);
-            return flightDate >= today;
-        });
-
-        if (upcomingTickets.length === 0) return null;
-
-        upcomingTickets.sort((a, b) => {
-            return new Date(a.date) - new Date(b.date);
-        });
-
-        return upcomingTickets[0];
-    };
+    useEffect(() => {
+    }, [users]);
 
     return (
         <div>
@@ -641,6 +649,102 @@ export default function Crew() {
                     )}
                 </DrawerContent>
             </Drawer>
+            <Modal isOpen={isOpenModal} backdrop="blur" size="3xl" placement="top-center" onOpenChange={onOpenChangeModal}>
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                            <ModalHeader className="flex flex-col gap-1">
+                                <h1 className="text-gray-600 text-2xl font-medium pb-8">ADD FLIGHT</h1>
+                            </ModalHeader>
+                            <ModalBody>
+                                <Form className="w-full flex flex-col gap-4"
+                                    onReset={() => setAction("reset")}
+                                    onSubmit={(e) => {
+                                        e.preventDefault();
+                                        let data = Object.fromEntries(new FormData(e.currentTarget));
+                                        data["flights"] = [];
+
+                                        setUserList(prev => [...prev, data]);
+                                        onClose();
+                                    }}
+                                >
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Input
+                                            isRequired
+                                            name="id"
+                                            label="ID"
+                                            labelPlacement="outside"
+                                            placeholder="Enter crew member's ID (e.g. 2991205123458)"
+                                            type="number"
+                                        />
+                                        <Input
+                                            isRequired
+                                            name="name"
+                                            label="Name"
+                                            labelPlacement="outside"
+                                            placeholder="Enter crew member's name (e.g. Elena Radu)"
+                                        />
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Input
+                                            isRequired
+                                            name="email"
+                                            label="Email"
+                                            labelPlacement="outside"
+                                            placeholder="Enter crew member's email"
+                                            type="email"
+                                        />
+                                        <Input
+                                            isRequired
+                                            name="phone"
+                                            label="Phone"
+                                            labelPlacement="outside"
+                                            placeholder="Enter crew member's phone number"
+                                            type="number"
+                                        />
+                                    </div>
+                                    <div className="w-full flex gap-4 flex-row">
+                                        <Autocomplete
+                                            isRequired
+                                            label="Airline"
+                                            name="airline"
+                                            labelPlacement="outside"
+                                            placeholder="Select crew member's airline"
+                                        >
+                                            {
+                                                airlines_list.map((airline) => (
+                                                    <AutocompleteItem key={airline.id}>{airline.name}</AutocompleteItem>
+                                                ))
+                                            }
+                                        </Autocomplete>
+                                        <Autocomplete
+                                            isRequired
+                                            label="Role"
+                                            name="role"
+                                            labelPlacement="outside"
+                                            placeholder="Select crew member's role" 
+                                        >
+                                            <AutocompleteItem>Flight Attendant</AutocompleteItem>
+                                            <AutocompleteItem>First Officer</AutocompleteItem>
+                                            <AutocompleteItem>Captain</AutocompleteItem>
+                                        </Autocomplete>
+                                    </div>
+                                    <div className="flex justify-end w-full pt-8 gap-4">
+                                        <Button color="default" type="reset" variant="flat">
+                                            Reset
+                                        </Button>
+                                        <Button type="submit" color="secondary">
+                                            Add Flight
+                                        </Button>
+                                    </div>
+                                </Form>
+                            </ModalBody>
+                            <ModalFooter>
+                            </ModalFooter>
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
         </div>
     );
 }
