@@ -589,7 +589,6 @@ export default function Crew() {
                             <DrawerHeader>
                                 <div className="w-full flex justify-between items-center">
                                     <h2 className="text-2xl uppercase">{activeUser.name}</h2>
-                                    <Button radius="sm" className="bg-tp-blue-light">EDIT</Button>
                                 </div>
                             </DrawerHeader>
                             <DrawerBody className="h-full">
