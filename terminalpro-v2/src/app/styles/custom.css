@@ -1,8 +1,0 @@
-/* bg-tp-gradient-login și bg-tp-gradient-barcode */
-.bg-tp-gradient-login {
-  background: var(--color-tp-gradient-login);
-}
-
-.bg-tp-gradient-barcode {
-  background: var(--color-tp-gradient-barcode);
-}

@@ -621,27 +621,34 @@ export default function Crew() {
 
                                 <div className="mt-6">
                                     <h3 className="text-xl uppercase text-gray-600">Previous flights</h3>
-                                    <Table className="mt-4" aria-label="Previous flights for crew member">
-                                        <TableHeader>
-                                            {/* <TableColumn className="uppercase">Ticket ID</TableColumn> */}
-                                            <TableColumn className="uppercase">Flight</TableColumn>
-                                            <TableColumn className="uppercase">Departure</TableColumn>
-                                            <TableColumn className="uppercase">Destination</TableColumn>
-                                            <TableColumn className="uppercase">Date</TableColumn>
-                                        </TableHeader>
-                                        <TableBody>
-                                            {
-                                                activeUser.flights.map((flight) => (
-                                                    <TableRow key={flight.flightNumber}>
-                                                        <TableCell>{flight.flightNumber}</TableCell>
-                                                        <TableCell>{flight.departure}</TableCell>
-                                                        <TableCell>{flight.destination}</TableCell>
-                                                        <TableCell>{flight.date}</TableCell>
-                                                    </TableRow>
-                                                ))
-                                            }
-                                        </TableBody>
-                                    </Table>
+                                    {
+                                        activeUser.flights.length === 0
+                                            ?
+                                            <div className="mt-4 p-4 text-center">
+                                                <p>No previous flights found for this crew member.</p>
+                                            </div>
+                                            : <Table className="mt-4" aria-label="Previous flights for crew member">
+                                                <TableHeader>
+                                                    {/* <TableColumn className="uppercase">Ticket ID</TableColumn> */}
+                                                    <TableColumn className="uppercase">Flight</TableColumn>
+                                                    <TableColumn className="uppercase">Departure</TableColumn>
+                                                    <TableColumn className="uppercase">Destination</TableColumn>
+                                                    <TableColumn className="uppercase">Date</TableColumn>
+                                                </TableHeader>
+                                                <TableBody>
+                                                    {
+                                                        activeUser.flights.map((flight) => (
+                                                            <TableRow key={flight.flightNumber}>
+                                                                <TableCell>{flight.flightNumber}</TableCell>
+                                                                <TableCell>{flight.departure}</TableCell>
+                                                                <TableCell>{flight.destination}</TableCell>
+                                                                <TableCell>{flight.date}</TableCell>
+                                                            </TableRow>
+                                                        ))
+                                                    }
+                                                </TableBody>
+                                            </Table>
+                                    }
                                 </div>
                             </DrawerBody>
                         </div>
@@ -653,7 +660,7 @@ export default function Crew() {
                     {(onClose) => (
                         <>
                             <ModalHeader className="flex flex-col gap-1">
-                                <h1 className="text-gray-600 text-2xl font-medium pb-8">ADD FLIGHT</h1>
+                                <h1 className="text-gray-600 text-2xl font-medium pb-8">ADD CREW MEMBER</h1>
                             </ModalHeader>
                             <ModalBody>
                                 <Form className="w-full flex flex-col gap-4"
@@ -721,7 +728,7 @@ export default function Crew() {
                                             label="Role"
                                             name="role"
                                             labelPlacement="outside"
-                                            placeholder="Select crew member's role" 
+                                            placeholder="Select crew member's role"
                                         >
                                             <AutocompleteItem>Flight Attendant</AutocompleteItem>
                                             <AutocompleteItem>First Officer</AutocompleteItem>
@@ -733,7 +740,7 @@ export default function Crew() {
                                             Reset
                                         </Button>
                                         <Button type="submit" color="secondary">
-                                            Add Flight
+                                            Add Crew Member
                                         </Button>
                                     </div>
                                 </Form>

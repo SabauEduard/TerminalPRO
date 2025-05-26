@@ -15,7 +15,7 @@ import {
     Dropdown,
     DropdownMenu,
     DropdownItem,
-    DropdownSection,
+    DateRangePicker,
 
     Pagination,
     useDisclosure,
@@ -32,7 +32,7 @@ import {
     Autocomplete,
     AutocompleteItem
 } from "@heroui/react";
-
+import { getLocalTimeZone, today } from "@internationalized/date";
 import SearchIcon from "../icons/search";
 import ChevronDownIcon from "../icons/chevronDown";
 import PlusIcon from "../icons/plus";
@@ -380,6 +380,8 @@ export default function Flights() {
         direction: "descending",
     });
     const [page, setPage] = React.useState(1);
+
+    const [flightDuration, setFlightDuration] = React.useState(null);
 
     const hasSearchFilter = Boolean(filterValue);
 
@@ -733,11 +735,22 @@ export default function Flights() {
                                     onSubmit={(e) => {
                                         e.preventDefault();
                                         let data = Object.fromEntries(new FormData(e.currentTarget));
+
+
+                                        if (!flightDuration) {
+                                            alert("Please select flight duration");
+                                            return;
+                                        }
+
+                                        const formatDateWithoutZ = (date) => {
+                                            return date.toISOString().replace('Z', '').slice(0, 19);
+                                        };
+
                                         data = {
                                             ...data,
                                             id: (flightList.length + 1).toString(),
-                                            departure_time: new Date(data.departure_time).toISOString(),
-                                            arrival_time: new Date(data.arrival_time).toISOString(),
+                                            departure_time: formatDateWithoutZ(flightDuration.start.toDate()),
+                                            arrival_time: formatDateWithoutZ(flightDuration.end.toDate()),
                                             crew: [
                                                 ...Array.from(selectedCaptains).map((captain) => ({ name: captain, role: "Captain" })),
                                                 ...Array.from(selectedFirstOfficers).map((officer) => ({ name: officer, role: "First Officer" })),
@@ -745,6 +758,7 @@ export default function Flights() {
                                                 ...Array.from(selectedAttendants).map((attendant) => ({ name: attendant, role: "Flight Attendant" }))
                                             ]
                                         }
+                                        console.log(data);
                                         setFlightList((prev) => [...prev, data]);
                                         onOpenChangeModal(false);
                                         onClose();
@@ -753,6 +767,7 @@ export default function Flights() {
                                     <div className="w-full flex gap-4 flex-row">
                                         <Input
                                             isRequired
+                                            radius="sm"
                                             name="flight_number"
                                             label="Flight Number"
                                             labelPlacement="outside"
@@ -762,6 +777,7 @@ export default function Flights() {
                                     <div className="w-full flex gap-4 flex-row">
                                         <Autocomplete
                                             isRequired
+                                            radius="sm"
                                             label="Aircraft"
                                             name="aircraft"
                                             labelPlacement="outside"
@@ -775,6 +791,7 @@ export default function Flights() {
                                         </Autocomplete>
                                         <Autocomplete
                                             isRequired
+                                            radius="sm"
                                             label="Airline"
                                             name="airline"
                                             labelPlacement="outside"
@@ -790,6 +807,7 @@ export default function Flights() {
                                     <div className="w-full flex gap-4 flex-row">
                                         <Input
                                             isRequired
+                                            radius="sm"
                                             name="origin"
                                             label="Origin"
                                             labelPlacement="outside"
@@ -797,6 +815,7 @@ export default function Flights() {
                                         />
                                         <Input
                                             isRequired
+                                            radius="sm"
                                             name="destination"
                                             label="Destination"
                                             labelPlacement="outside"
@@ -806,6 +825,7 @@ export default function Flights() {
                                     <div className="w-full flex gap-4 flex-row">
                                         <Input
                                             isRequired
+                                            radius="sm"
                                             name="departure_gate"
                                             label="Departure Gate"
                                             labelPlacement="outside"
@@ -813,6 +833,7 @@ export default function Flights() {
                                         />
                                         <Input
                                             isRequired
+                                            radius="sm"
                                             name="arrival_gate"
                                             label="Arrival Gate"
                                             labelPlacement="outside"
@@ -820,22 +841,16 @@ export default function Flights() {
                                         />
                                     </div>
                                     <div className="w-full flex gap-4 flex-row">
-                                        <Input
+                                        <DateRangePicker
                                             isRequired
-                                            name="departure_time"
-                                            label="Departure Time"
+                                            name="flight_duration"
+                                            label="Flight Duration"
+                                            granularity="minute"
                                             labelPlacement="outside"
-                                            placeholder="Enter departure time"
-                                            type="datetime-local"
-                                        />
-                                        <Input
-                                            isRequired
-                                            name="arrival_time"
-                                            label="Arrival Time"
-                                            labelPlacement="outside"
-                                            placeholder="Enter arrival time"
-                                            type="datetime-local"
-                                        />
+                                            placeholder="Select flight duration"
+                                            minValue={today(getLocalTimeZone())}
+                                            radius="sm"
+                                            onChange={setFlightDuration} />
                                     </div>
                                     <div className="w-full">
                                         <h3 className="text-lg font-medium mb-2">Crew Members<a className="text-red-600">*</a></h3>
@@ -845,8 +860,8 @@ export default function Flights() {
                                                 <DropdownTrigger>
                                                     <Button
                                                         variant="flat"
-                                                        className="w-full justify-between"
                                                         radius="sm"
+                                                        className="w-full justify-between"
                                                         endContent={<ChevronDownIcon className="text-small" />}
                                                     >
                                                         {selectedCaptains.size > 0
@@ -864,19 +879,18 @@ export default function Flights() {
                                                     onSelectionChange={setSelectedCaptains}
                                                     className="w-full min-w-[240px]"
                                                     radius="sm"
-                                                >
-                                                    {[
-                                                        { id: "1", name: "Alexandru Munteanu" },
-                                                        { id: "2", name: "Victor Stanescu" },
-                                                        { id: "3", name: "James Williams" },
-                                                        { id: "4", name: "Liviu Mihăilescu" }
-                                                    ].map((person) => (
-                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
-                                                            <div className="flex items-center">
-                                                                <span className="text-small">{person.name}</span>
-                                                            </div>
-                                                        </DropdownItem>
-                                                    ))}
+                                                >                                                    {[
+                                                    { name: "Alexandru Munteanu" },
+                                                    { name: "Victor Stanescu" },
+                                                    { name: "James Williams" },
+                                                    { name: "Liviu Mihăilescu" }
+                                                ].map((person) => (
+                                                    <DropdownItem key={person.name} textValue={person.name} radius="sm">
+                                                        <div className="flex items-center">
+                                                            <span className="text-small">{person.name}</span>
+                                                        </div>
+                                                    </DropdownItem>
+                                                ))}
                                                 </DropdownMenu>
                                             </Dropdown>
 
@@ -904,19 +918,18 @@ export default function Flights() {
                                                     onSelectionChange={setSelectedFirstOfficers}
                                                     className="w-full min-w-[240px]"
                                                     radius="sm"
-                                                >
-                                                    {[
-                                                        { id: "1", name: "Elena Popescu" },
-                                                        { id: "2", name: "Cristina Barbu" },
-                                                        { id: "3", name: "Sarah Mitchell" },
-                                                        { id: "4", name: "Teodora Ionescu" }
-                                                    ].map((person) => (
-                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
-                                                            <div className="flex items-center">
-                                                                <span className="text-small">{person.name}</span>
-                                                            </div>
-                                                        </DropdownItem>
-                                                    ))}
+                                                >                                                    {[
+                                                    { name: "Elena Popescu" },
+                                                    { name: "Cristina Barbu" },
+                                                    { name: "Sarah Mitchell" },
+                                                    { name: "Teodora Ionescu" }
+                                                ].map((person) => (
+                                                    <DropdownItem key={person.name} textValue={person.name} radius="sm">
+                                                        <div className="flex items-center">
+                                                            <span className="text-small">{person.name}</span>
+                                                        </div>
+                                                    </DropdownItem>
+                                                ))}
                                                 </DropdownMenu>
                                             </Dropdown>
                                         </div>
@@ -946,19 +959,18 @@ export default function Flights() {
                                                     onSelectionChange={setSelectedCabinChiefs}
                                                     className="w-full min-w-[240px]"
                                                     radius="sm"
-                                                >
-                                                    {[
-                                                        { id: "1", name: "Maria Ionescu" },
-                                                        { id: "2", name: "Adrian Manole" },
-                                                        { id: "3", name: "Robert Taylor" },
-                                                        { id: "4", name: "Madalina Bucur" }
-                                                    ].map((person) => (
-                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
-                                                            <div className="flex items-center">
-                                                                <span className="text-small">{person.name}</span>
-                                                            </div>
-                                                        </DropdownItem>
-                                                    ))}
+                                                >                                                    {[
+                                                    { name: "Maria Ionescu" },
+                                                    { name: "Adrian Manole" },
+                                                    { name: "Robert Taylor" },
+                                                    { name: "Madalina Bucur" }
+                                                ].map((person) => (
+                                                    <DropdownItem key={person.name} textValue={person.name} radius="sm">
+                                                        <div className="flex items-center">
+                                                            <span className="text-small">{person.name}</span>
+                                                        </div>
+                                                    </DropdownItem>
+                                                ))}
                                                 </DropdownMenu>
                                             </Dropdown>
 
@@ -986,23 +998,22 @@ export default function Flights() {
                                                     onSelectionChange={setSelectedAttendants}
                                                     className="w-full min-w-[240px]"
                                                     radius="sm"
-                                                >
-                                                    {[
-                                                        { id: "1", name: "Andrei Dima" },
-                                                        { id: "2", name: "Ioana Popa" },
-                                                        { id: "3", name: "Sorina Dumitrescu" },
-                                                        { id: "4", name: "Diana Vasilescu" },
-                                                        { id: "5", name: "Gabriela Pană" },
-                                                        { id: "6", name: "Alexandra Dragomir" },
-                                                        { id: "7", name: "Razvan Stancu" },
-                                                        { id: "8", name: "Andreea Popa" }
-                                                    ].map((person) => (
-                                                        <DropdownItem key={person.id} textValue={person.name} radius="sm">
-                                                            <div className="flex items-center">
-                                                                <span className="text-small">{person.name}</span>
-                                                            </div>
-                                                        </DropdownItem>
-                                                    ))}
+                                                >                                                    {[
+                                                    { name: "Andrei Dima" },
+                                                    { name: "Ioana Popa" },
+                                                    { name: "Sorina Dumitrescu" },
+                                                    { name: "Diana Vasilescu" },
+                                                    { name: "Gabriela Pană" },
+                                                    { name: "Alexandra Dragomir" },
+                                                    { name: "Razvan Stancu" },
+                                                    { name: "Andreea Popa" }
+                                                ].map((person) => (
+                                                    <DropdownItem key={person.name} textValue={person.name} radius="sm">
+                                                        <div className="flex items-center">
+                                                            <span className="text-small">{person.name}</span>
+                                                        </div>
+                                                    </DropdownItem>
+                                                ))}
                                                 </DropdownMenu>
                                             </Dropdown>
                                         </div>
