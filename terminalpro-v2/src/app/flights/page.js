@@ -56,7 +56,7 @@ export const columns = [
 
 export const flights = [
     {
-        id: "FL60208",
+        id: "1",
         airline: "TAROM",
         aircraft: "Boeing 737-800",
         flight_number: "RO302",
@@ -73,10 +73,9 @@ export const flights = [
             { name: "Andrei Dima", role: "Flight Attendant" },
             { name: "Ioana Popa", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60209",
+        id: "2",
         airline: "Wizz Air",
         aircraft: "Airbus A320-200",
         flight_number: "W43238",
@@ -92,10 +91,9 @@ export const flights = [
             { name: "Adrian Manole", role: "Cabin Chief" },
             { name: "Sorina Dumitrescu", role: "Flight Attendant" }
         ],
-        status: "Boarding"
     },
     {
-        id: "FL60210",
+        id: "3",
         airline: "KLM",
         aircraft: "Embraer E190",
         flight_number: "KLM89P2",
@@ -112,10 +110,9 @@ export const flights = [
             { name: "Diana Vasilescu", role: "Flight Attendant" },
             { name: "Paul Schmidt", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60211",
+        id: "4",
         airline: "Lufthansa",
         aircraft: "Airbus A321neo",
         flight_number: "LH1655",
@@ -132,10 +129,9 @@ export const flights = [
             { name: "Gabriela Pană", role: "Flight Attendant" },
             { name: "Thomas Neumann", role: "Flight Attendant" }
         ],
-        status: "Check-in Open"
     },
     {
-        id: "FL60212",
+        id: "5",
         airline: "British Airways",
         aircraft: "Boeing 787-9",
         flight_number: "BA884",
@@ -153,10 +149,9 @@ export const flights = [
             { name: "George Brown", role: "Flight Attendant" },
             { name: "Emma Watson", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60213",
+        id: "6",
         airline: "Air France",
         aircraft: "Airbus A320-200",
         flight_number: "AFR67L9",
@@ -173,10 +168,9 @@ export const flights = [
             { name: "Corina Andreescu", role: "Flight Attendant" },
             { name: "Marc Leclerc", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60214",
+        id: "7",
         airline: "Turkish Airlines",
         aircraft: "Airbus A330-300",
         flight_number: "THY42R7",
@@ -194,10 +188,9 @@ export const flights = [
             { name: "Irina Novak", role: "Flight Attendant" },
             { name: "Elena Radulescu", role: "Flight Attendant" }
         ],
-        status: "Check-in Open"
     },
     {
-        id: "FL60215",
+        id: "8",
         airline: "Ryanair",
         aircraft: "Boeing 737-800",
         flight_number: "RYR6Z19",
@@ -213,10 +206,9 @@ export const flights = [
             { name: "Dorin Radu", role: "Cabin Chief" },
             { name: "Anamaria Stoica", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60216",
+        id: "9",
         airline: "TAROM",
         aircraft: "ATR 72-600",
         flight_number: "ROT3476",
@@ -232,10 +224,9 @@ export const flights = [
             { name: "Daniel Ursu", role: "Cabin Chief" },
             { name: "Simona Florescu", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60217",
+        id: "10",
         airline: "LOT Polish Airlines",
         aircraft: "Embraer E195",
         flight_number: "LOT23H5",
@@ -251,10 +242,9 @@ export const flights = [
             { name: "Piotr Wójcik", role: "Cabin Chief" },
             { name: "Nicoleta Matei", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60218",
+        id: "11",
         airline: "Aegean Airlines",
         aircraft: "Airbus A320neo",
         flight_number: "AEE76T2",
@@ -271,10 +261,9 @@ export const flights = [
             { name: "Sofia Karagianni", role: "Flight Attendant" },
             { name: "Catalin Nistor", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60219",
+        id: "12",
         airline: "Qatar Airways",
         aircraft: "Boeing 777-300ER",
         flight_number: "QTR82K3",
@@ -294,10 +283,9 @@ export const flights = [
             { name: "Omar Farooq", role: "Flight Attendant" },
             { name: "Layla Hassan", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60220",
+        id: "13",
         airline: "Wizz Air",
         aircraft: "Airbus A321neo",
         flight_number: "WZZ8KJ2",
@@ -314,10 +302,9 @@ export const flights = [
             { name: "Razvan Stancu", role: "Flight Attendant" },
             { name: "Andreea Popa", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60221",
+        id: "14",
         airline: "Austrian Airlines",
         aircraft: "Embraer E195",
         flight_number: "AUA19P7",
@@ -333,10 +320,9 @@ export const flights = [
             { name: "Stefan Wagner", role: "Cabin Chief" },
             { name: "Iulia Stanescu", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60222",
+        id: "15",
         airline: "Blue Air",
         aircraft: "Boeing 737-800",
         flight_number: "BLA5T31",
@@ -353,10 +339,9 @@ export const flights = [
             { name: "Mirela Dumitrache", role: "Flight Attendant" },
             { name: "Vlad Georgescu", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     },
     {
-        id: "FL60223",
+        id: "16",
         airline: "Aeroflot",
         aircraft: "Airbus A320-200",
         flight_number: "AFL56N8",
@@ -373,7 +358,6 @@ export const flights = [
             { name: "Natalia Kuznetsova", role: "Flight Attendant" },
             { name: "Andrei Volkov", role: "Flight Attendant" }
         ],
-        status: "Scheduled"
     }
 ];
 
@@ -390,6 +374,7 @@ export default function Flights() {
     const [filterValue, setFilterValue] = React.useState("");
     const [visibleColumns, setVisibleColumns] = React.useState(new Set(INITIAL_VISIBLE_COLUMNS));
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const [flightList, setFlightList] = React.useState(flights);
     const [sortDescriptor, setSortDescriptor] = React.useState({
         column: "departure_time",
         direction: "descending",
@@ -405,7 +390,7 @@ export default function Flights() {
     }, [visibleColumns]);
 
     const filteredItems = React.useMemo(() => {
-        let filteredFlights = [...flights];
+        let filteredFlights = [...flightList];
 
         if (hasSearchFilter) {
             filteredFlights = filteredFlights.filter((flight) =>
@@ -427,7 +412,7 @@ export default function Flights() {
         }
 
         return filteredFlights;
-    }, [flights, filterValue]);
+    }, [flightList, filterValue]);
 
     const pages = Math.ceil(filteredItems.length / rowsPerPage) || 1;
 
@@ -563,7 +548,7 @@ export default function Flights() {
         filterValue,
         visibleColumns,
         onRowsPerPageChange,
-        flights.length,
+        flightList.length,
         onSearchChange,
         hasSearchFilter,
     ]);
@@ -749,7 +734,21 @@ export default function Flights() {
                                     onSubmit={(e) => {
                                         e.preventDefault();
                                         let data = Object.fromEntries(new FormData(e.currentTarget));
-                                        console.log(JSON.stringify(data));
+                                        data = {
+                                            ...data,
+                                            id: (flightList.length + 1).toString(),
+                                            departure_time: new Date(data.departure_time).toISOString(),
+                                            arrival_time: new Date(data.arrival_time).toISOString(),
+                                            crew: [
+                                                ...Array.from(selectedCaptains).map((captain) => ({ name: captain, role: "Captain" })),
+                                                ...Array.from(selectedFirstOfficers).map((officer) => ({ name: officer, role: "First Officer" })),
+                                                ...Array.from(selectedCabinChiefs).map((chief) => ({ name: chief, role: "Cabin Chief" })),
+                                                ...Array.from(selectedAttendants).map((attendant) => ({ name: attendant, role: "Flight Attendant" }))
+                                            ]
+                                        }
+                                        setFlightList((prev) => [...prev, data]);
+                                        onOpenChangeModal(false);
+                                        onClose();
                                     }}
                                 >
                                     <div className="w-full flex gap-4 flex-row">
