@@ -15,6 +15,9 @@
   --color-tp-purple-dark: #453796;
   --color-tp-gray-light: #dedede;
   --color-tp-blue-light: #B6DEFF;
+  --color-tp-dusted-blue: rgba(97, 119, 140, 255);
+  --color-tp-dusted-beige: rgba(137, 124, 116, 1);
+  --color-tp-gradient-login: 150deg, rgba(97, 119, 140, 255), rgba(97, 119, 140, 255), rgba(137, 124, 116, 1) no-repeat center;
   --color-tp-gradient-barcode: linear-gradient(135deg, #e0f7fa 0%, #80deea 50%, #4dd0e1 100%);
   --shadow-circle1: inset -4px 0px 4px rgba(0, 0, 0, 0.09);
   --shadow-circle2: inset 4px 0px 4px rgba(0, 0, 0, 0.09);
