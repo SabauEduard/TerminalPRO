@@ -736,9 +736,6 @@ export default function Crew() {
                                         </Autocomplete>
                                     </div>
                                     <div className="flex justify-end w-full pt-8 gap-4">
-                                        <Button color="default" type="reset" variant="flat">
-                                            Reset
-                                        </Button>
                                         <Button type="submit" color="secondary">
                                             Add Crew Member
                                         </Button>
