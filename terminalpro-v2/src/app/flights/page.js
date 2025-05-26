@@ -1019,9 +1019,6 @@ export default function Flights() {
                                         </div>
                                     </div>
                                     <div className="flex justify-end w-full gap-4">
-                                        <Button color="default" type="reset" variant="flat">
-                                            Reset
-                                        </Button>
                                         <Button type="submit" color="secondary">
                                             Add Flight
                                         </Button>
