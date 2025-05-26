@@ -650,7 +650,6 @@ export default function Flights() {
                                             {calculateFlightDuration(activeFlight.departure_time, activeFlight.arrival_time)}
                                         </div>
                                     </div>
-                                    <Button radius="sm" className="bg-tp-blue-light">EDIT</Button>
                                 </div>
                             </DrawerHeader>
                             <DrawerBody className="h-full">
