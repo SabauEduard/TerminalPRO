@@ -3,23 +3,21 @@
 import { useState, FormEvent, ChangeEvent } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { Form, Input, Button } from "@heroui/react";
+import Logo from '../components/logo';
+import ExclamationIcon from '../icons/exclamation';
 
-export default function LoginPage() {
+export default function LoginPage({ onLogin }) {
   const [employeeCode, setEmployeeCode] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Authentication logic here
-    console.log('Employee code submitted:', employeeCode);
-
-    // For now, just navigate to dashboard
-    router.push('/dashboard');
-  };
-
-  const handleInputChange = (e) => {
-    setEmployeeCode(e.target.value);
-  };
+  const validUsers = [
+    { employeeCode: "EMPL1234567", password: "Password123!" },
+    { employeeCode: "TEST5678901", password: "Secure123$" },
+    { employeeCode: "ADMIN012345", password: "Admin2023@" }
+  ];
 
   return (
     <div className="min-h-screen w-full bg-[#f0f6ff] flex items-center justify-center p-8">
@@ -35,44 +33,84 @@ export default function LoginPage() {
           />
         </div>
 
-        <div className="bg-white rounded-lg shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1)] p-8 max-w-lg w-full border border-[#dee6f1] md:p-10 md:w-1/2 lg:w-3/5">
-          <div className="flex items-center justify-center mb-8">
-            <Image
-              src="/airplane-icon.svg"
-              alt="Airplane Icon"
-              width={40}
-              height={40}
-              className="mr-2"
-            />
-            <h1 className="ml-2 text-2xl font-normal text-[#1E1E1E]">
-              Terminal<span className="text-[#54479B]">PRO</span>
-            </h1>
+        <div className="flex flex-col items-center gap-3 bg-white rounded-lg shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1)] p-8 max-w-lg w-full border border-[#dee6f1] md:p-10 md:w-1/2 lg:w-3/5">
+          <div className="flex items-center justify-center mb-4">
+            <Logo />
           </div>
 
-          <h2 className="text-2xl font-light text-black mb-8 text-center">Staff Authentication</h2>
-
-          <form onSubmit={handleSubmit}>
-            <div className="mb-8 mr-4">
-              <label htmlFor="employee-code" className="block text-sm text-black mb-2 font-normal">
-                Enter your employee code
-              </label>
-              <input
-                type="text"
-                id="employee-code"
-                name="employee-code"
-                value={employeeCode}
-                onChange={handleInputChange}
-                className="w-full px-4 py-[0.875rem] border border-gray-300 rounded-md bg-gray-100 text-base font-normal"
-              />
+          {isLoading ? (
+            <div className="flex flex-col items-center justify-center py-10 w-full">
+              <div className="animate-pulse flex flex-col items-center gap-4">
+                <div className="h-8 w-8 rounded-full bg-blue-100"></div>
+                <div className="h-5 w-32 bg-blue-100 rounded"></div>
+              </div>
             </div>
+          ) : (
+            <>
+              <h2 className="text-2xl font-light text-black text-center">Staff Authentication</h2>
 
-            <button
-              type="submit"
-              className="bg-[#373F51] text-white px-8 py-[0.875rem] rounded-[1rem] text-base cursor-pointer mx-auto block transition-colors duration-200 font-normal hover:bg-[#292a3a]"
-            >
-              Authorize
-            </button>
-          </form>
+              {error && (
+                <div className='w-full'>
+                  <div className="flex gap-2 items-center text-red-700 text-sm font-medium p-2 my-1 bg-red-50 rounded-md">
+                    <ExclamationIcon color="currentColor" />
+                    {error}
+                  </div>
+                </div>
+              )}
+
+              <Form
+                className="w-full flex flex-col gap-4"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const formData = new FormData(e.currentTarget);
+                  const data = Object.fromEntries(formData);
+                  
+                  const isValidUser = validUsers.some(
+                    user => user.employeeCode === data.employeeCode && user.password === data.password
+                  );
+                  
+                  if (isValidUser) {
+                    setError("");
+                    setIsLoading(true); 
+                    if (onLogin) {
+                      onLogin(data.employeeCode);
+                    }
+                    router.push('/');
+                  } else {
+                    setError("Invalid employee code or password");
+                  }
+                }}
+              >
+                <Input
+                  isRequired
+                  radius='sm'
+                  errorMessage="Please enter a valid employee code"
+                  label="Employee code"
+                  labelPlacement="outside"
+                  name="employeeCode"
+                  placeholder="Enter your employee code"
+                  type="text"
+                />
+
+                <Input
+                  isRequired
+                  radius='sm'
+                  errorMessage="Please enter a valid password"
+                  label="Password"
+                  labelPlacement="outside"
+                  name="password"
+                  placeholder="Enter your password"
+                  type="password"
+                />
+
+                <div className="flex gap-2">
+                  <Button color="primary" type="submit">
+                    Submit
+                  </Button>
+                </div>
+              </Form>
+            </>
+          )}
         </div>
       </div>
     </div>
